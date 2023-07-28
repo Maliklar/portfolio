@@ -1,0 +1,38 @@
+@import "@/styles/components/BoxAttributes.module.scss";
+@import "@/styles/components/animations.module.scss";
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin: 0px;
+
+  padding: 0.8em;
+  transition: all 0.2s;
+  @extend .animations;
+
+  &[data-float="start"] {
+    position: fixed;
+    inset-inline-start: 0%;
+    max-width: 500px;
+    width: calc(100% - 2em);
+    bottom: 0px;
+    margin: 1em;
+    z-index: 100;
+  }
+
+  &[data-float="end"] {
+    position: fixed;
+    min-width: 500px;
+    inset-inline-end: 0%;
+    bottom: 0px;
+    margin: 1em;
+    z-index: 2;
+  }
+
+  & > p {
+    flex: 1;
+  }
+  @extend .boxAttributes;
+}

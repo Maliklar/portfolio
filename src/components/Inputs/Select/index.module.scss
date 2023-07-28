@@ -1,0 +1,8 @@
+@import "@/styles/variables.scss";
+@import "@/styles/components/TextInput.module.scss";
+.container {
+  @extend .container;
+  & option {
+    background-color: $color-gray-10;
+  }
+}

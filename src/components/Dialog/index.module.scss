@@ -1,0 +1,87 @@
+@import "@/styles/variables.scss";
+@import "@/styles/components/animations.module.scss";
+
+.dialog {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  outline: none;
+  min-height: 400px;
+  width: 100%;
+  border-radius: $border-radius;
+  box-shadow: $shadow-normal;
+  background-color: $color-default-dark;
+  color: white;
+  overflow: hidden;
+  max-width: 600px;
+  &[data-size="large"] {
+    max-width: 800px;
+  }
+  &[data-size="fullscreen"] {
+    min-width: 100dvw;
+    height: 100dvh;
+  }
+
+  transition: all 0.2s;
+  @extend .animations;
+
+  .header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+    & > svg {
+      cursor: pointer;
+    }
+  }
+
+  .main {
+    position: relative;
+    padding: 0.5em;
+    flex: 1;
+  }
+
+  .footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1em;
+    padding: 0.5em;
+  }
+
+  &[data-loading="true"] {
+    &::before {
+      content: "";
+      display: block;
+      background: linear-gradient(
+        to left,
+        $color-primary,
+        white,
+        $color-success,
+        white,
+        $color-primary,
+        white
+      );
+      height: 2px;
+      width: 300%;
+      position: absolute;
+      inset-inline: -100%;
+      animation: running infinite alternate loadingAnim 1s;
+    }
+  }
+}
+
+@keyframes loadingAnim {
+  0% {
+    transform: translateX(-33%);
+  }
+
+  100% {
+    transform: translateX(33%);
+  }
+}

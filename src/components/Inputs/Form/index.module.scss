@@ -1,0 +1,10 @@
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  & > button[type="submit"] {
+    align-self: flex-end;
+  }
+}

@@ -1,0 +1,29 @@
+@import "@/styles/variables.scss";
+@import "@/styles/components/TextInput.module.scss";
+
+.container {
+  @extend .container;
+
+  .inputContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: $shadow-thin;
+    min-height: 400px;
+    height: 400px;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 1em;
+
+    .removeButton {
+      position: absolute;
+      top: 0px;
+      inset-inline-end: 0px;
+      margin: 1em;
+    }
+    img {
+      position: relative !important;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import "@/styles/variables.scss";
+
+.boxAttributes {
+  &[color="primary"] {
+    background-color: $color-primary;
+  }
+  &[color="secondary"] {
+    background-color: $color-secondary;
+  }
+  &[color="success"] {
+    background-color: $color-success;
+  }
+  &[color="error"] {
+    background-color: $color-error;
+  }
+  &[color="warning"] {
+    background-color: $color-warning;
+  }
+  &[data-shadow="true"] {
+    box-shadow: $shadow-strong;
+  }
+  &[data-outlined="true"] {
+    border: $color-default-light-1 solid 1px;
+  }
+  border-radius: $border-radius;
+}

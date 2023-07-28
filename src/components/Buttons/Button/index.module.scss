@@ -1,0 +1,48 @@
+@import "@/styles/variables.scss";
+@import "@/styles/components/BoxAttributes.module.scss";
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  line-height: 1em;
+  padding: 0.8em 1em;
+  border-radius: $border-radius;
+  border: none;
+  background-color: transparent;
+  text-transform: uppercase;
+  color: $white;
+  font-weight: bold;
+  transition: all 0.5s;
+  cursor: pointer;
+
+  @extend .boxAttributes;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+  &:hover &:not(:disabled) {
+    &[color="primary"] {
+      background-color: $color-primary;
+    }
+    &[color="secondary"] {
+      background-color: $color-secondary;
+    }
+    &[color="success"] {
+      background-color: $color-success;
+    }
+    &[color="error"] {
+      background-color: $color-error;
+    }
+    &[color="warning"] {
+      background-color: $color-warning;
+    }
+    background-color: rgba(0, 0, 0, 0.249);
+  }
+  &:focus {
+    filter: brightness(0.8);
+  }
+  width: min-content;
+  white-space: nowrap;
+}

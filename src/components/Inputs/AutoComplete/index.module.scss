@@ -1,0 +1,165 @@
+@import "@/styles/variables.scss";
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  width: 100%;
+
+  .inputContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    min-height: 1.8em;
+    transition: all 0.5s;
+    font-size: 1em;
+    color: $white;
+    background-color: $color-default-dark-2;
+    border-radius: $border-radius $border-radius 0px 0px;
+    transition: all 0.5s;
+    padding: 0em 0.5em;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0px;
+      width: 100%;
+      height: 1px;
+      background-color: $color-blue-gray-3;
+      transition: all 0.5s;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 2px;
+      bottom: 0px;
+      background-color: $color-primary;
+      transition: all 0.5s;
+      z-index: 1;
+      transform: scale(0, 1);
+    }
+
+    &[data-outlined="true"] {
+      border-radius: $border-radius;
+      box-shadow: inset 0px 0px 0px 1px $color-blue-gray-3;
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        display: none;
+      }
+
+      &[data-focus="true"] {
+        outline: none;
+        box-shadow: inset 0px 0px 0px 2px $color-primary;
+      }
+      &[data-error="true"] {
+        box-shadow: inset 0px 0px 0px 1px $color-error;
+        color: $color-error;
+      }
+      &[data-error="true"]:focus {
+        box-shadow: inset 0px 0px 0px 2px $color-error;
+        color: $color-error;
+      }
+    }
+    &[data-shadow="true"] {
+      box-shadow: $shadow-strong;
+    }
+
+    &[data-error="true"] {
+      color: $color-error;
+      &::before {
+        background-color: $color-error;
+        transform: scale(1, 1);
+      }
+      &:focus {
+        outline: none;
+        box-shadow: inset 0px -2px $color-error;
+      }
+    }
+
+    &[data-focus="true"] {
+      &::before {
+        transform: scale(1, 1);
+      }
+    }
+    &:hover {
+      z-index: 2;
+      background-color: $color-gray-10;
+    }
+
+    .input {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .selectedOptionsContainer {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3em;
+        padding: 0.5em;
+      }
+    }
+  }
+
+  .options {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-color: $color-gray-10;
+    max-height: 16em; // 256px for large screen
+    overflow-y: auto;
+    margin-top: 10px;
+    border-radius: 0px 0px $border-radius $border-radius;
+    border-right: solid 1px $color-blue-gray-3;
+    border-left: solid 1px $color-blue-gray-3;
+    border-bottom: solid 1px $color-blue-gray-3;
+    z-index: 3;
+    &[data-visible="false"] {
+      display: none;
+    }
+
+    .option {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      padding: 0.8em 1em;
+      cursor: pointer;
+
+      &[data-focused="true"] {
+        background-color: $color-blue-gray-10;
+        font-weight: bold;
+      }
+
+      &[data-selected="true"] {
+        background-color: $color-primary;
+        font-weight: bold;
+      }
+      & > :first-child {
+        flex: 1;
+        width: 100%;
+      }
+    }
+  }
+
+  small {
+    color: $color-error;
+    width: 100%;
+  }
+}

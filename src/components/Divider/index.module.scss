@@ -1,0 +1,14 @@
+@import "@/styles/variables.scss";
+
+.container {
+  position: relative;
+  display: block;
+  height: 1px;
+  align-self: stretch;
+  background-color: $color-gray-6;
+
+  &[data-vertical="true"] {
+    width: 1px;
+    height: 100%;
+  }
+}

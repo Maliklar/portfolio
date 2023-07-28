@@ -1,0 +1,109 @@
+@import "@/styles/variables.scss";
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  width: 100%;
+
+  .inputContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 1.8em;
+    transition: all 0.5s;
+    font-size: 1em;
+    color: $white;
+    background-color: $color-default-dark-2;
+    border-radius: $border-radius $border-radius 0px 0px;
+    transition: all 0.5s;
+    padding: 0em 1em;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0px;
+      width: 100%;
+      height: 1px;
+      background-color: $color-blue-gray-3;
+      transition: all 0.5s;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 2px;
+      bottom: 0px;
+      background-color: $color-primary;
+      transition: all 0.5s;
+      z-index: 2;
+      transform: scale(0, 1);
+    }
+
+    &[data-outlined="true"] {
+      border-radius: $border-radius;
+      box-shadow: inset 0px 0px 0px 1px $color-blue-gray-3;
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        display: none;
+      }
+
+      &[data-focus="true"] {
+        outline: none;
+        box-shadow: inset 0px 0px 0px 2px $color-primary;
+      }
+      &[data-error="true"] {
+        box-shadow: inset 0px 0px 0px 1px $color-error;
+        color: $color-error;
+      }
+      &[data-error="true"]:focus {
+        box-shadow: inset 0px 0px 0px 2px $color-error;
+        color: $color-error;
+      }
+    }
+    &[data-shadow="true"] {
+      box-shadow: $shadow-strong;
+    }
+
+    &[data-error="true"] {
+      color: $color-error;
+      &::before {
+        background-color: $color-error;
+        transform: scale(1, 1);
+      }
+      &:focus {
+        outline: none;
+        box-shadow: inset 0px -2px $color-error;
+      }
+    }
+
+    &[data-focus="true"] {
+      &::before {
+        transform: scale(1, 1);
+      }
+    }
+    &:hover {
+      z-index: 20;
+      background-color: $color-gray-10;
+    }
+  }
+
+  small {
+    color: $color-error;
+    width: 100%;
+  }
+}

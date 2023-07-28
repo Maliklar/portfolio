@@ -1,0 +1,67 @@
+.main {
+  display: flex;
+  flex-direction: column;
+
+  .section1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    h2 {
+      font-size: 5em;
+      animation: section1_h2 0.5s forwards;
+      margin-top: auto;
+    }
+    p {
+      font-size: 1.5em;
+      animation: section1_p 1s forwards;
+    }
+
+    button {
+      margin-top: auto;
+      animation: section1_button 1.5s forwards;
+    }
+  }
+}
+
+@keyframes section1_h2 {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes section1_p {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes section1_button {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  75% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: default;
+    transform: translateY(0%);
+  }
+}
