@@ -1,3 +1,4 @@
+"use client";
 import { type TextInputProps } from "@/utils/componentTypes";
 import styles from "./index.module.scss";
 import { useState, type FocusEvent } from "react";

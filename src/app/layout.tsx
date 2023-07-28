@@ -1,3 +1,4 @@
+import UIContext, { Context } from "@/contexts/UIContext";
 import "@/styles/globals.scss";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -16,22 +17,24 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <header>
-          <h1>Malik Elbadri</h1>
-          <nav>
-            <ul>
-              <li>Home</li>
-              <li>Gallery</li>
-              <li>About Me</li>
-              <li>Experience</li>
-              <li>Education</li>
-            </ul>
-          </nav>
-        </header>
-        {children}
-        <footer></footer>
-      </body>
+      <UIContext>
+        <body className={inter.className}>
+          <header>
+            <h1>Malik Elbadri</h1>
+            <nav>
+              <ul>
+                <li>Home</li>
+                <li>Gallery</li>
+                <li>About Me</li>
+                <li>Experience</li>
+                <li>Education</li>
+              </ul>
+            </nav>
+          </header>
+          {children}
+          <footer></footer>
+        </body>
+      </UIContext>
     </html>
   );
 }

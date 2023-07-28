@@ -1,6 +1,10 @@
+@import "@/styles/variables.scss";
+
+$section-height: calc(100vh - $navigation-height);
 .main {
   display: flex;
   flex-direction: column;
+  padding: 0em 1em;
 
   .section1 {
     display: flex;
@@ -8,8 +12,9 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100vh;
+    height: $section-height;
     text-align: center;
+    padding: 1em;
     h2 {
       font-size: 5em;
       animation: section1_h2 0.5s forwards;
@@ -23,6 +28,17 @@
     button {
       margin-top: auto;
       animation: section1_button 1.5s forwards;
+    }
+  }
+
+  .section2 {
+    height: $section-height;
+
+    ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1em;
     }
   }
 }

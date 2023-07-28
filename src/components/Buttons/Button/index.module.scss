@@ -11,10 +11,17 @@
   border: none;
   background-color: transparent;
   text-transform: uppercase;
-  color: $white;
+  // color: $white;
   font-weight: bold;
   transition: all 0.5s;
   cursor: pointer;
+
+  &[theme="dark"] {
+    color: white;
+  }
+  &[theme="light"] {
+    color: black;
+  }
 
   @extend .boxAttributes;
 
