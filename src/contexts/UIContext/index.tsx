@@ -3,7 +3,7 @@ import { ReactNode, createContext, useState } from "react";
 
 export const Context = createContext({
   theme: "light",
-  switchTheme: (theme: string) => {},
+  switchTheme: () => {},
 });
 
 const UIContext = ({
@@ -11,15 +11,16 @@ const UIContext = ({
 }: {
   children: ReactNode | JSX.Element | JSX.Element[] | string;
 }) => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState<"light" | "dark">("light");
 
-  const switchTheme = (newTheme: string) => {
+  const switchTheme = () => {
+    const newTheme = theme === "dark" ? "light" : "dark";
+
     if (typeof window === "object") {
-      console.log("HERE");
       document.body.classList.add(newTheme);
       document.body.classList.remove(theme);
     }
-    setTheme(theme);
+    setTheme(newTheme);
   };
   return (
     <Context.Provider

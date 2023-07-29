@@ -11,17 +11,10 @@
   border: none;
   background-color: transparent;
   text-transform: uppercase;
-  // color: $white;
+  color: $white;
   font-weight: bold;
   transition: all 0.5s;
   cursor: pointer;
-
-  &[theme="dark"] {
-    color: white;
-  }
-  &[theme="light"] {
-    color: black;
-  }
 
   @extend .boxAttributes;
 
@@ -32,24 +25,30 @@
   &:hover &:not(:disabled) {
     &[color="primary"] {
       background-color: $color-primary;
+      color: white;
     }
     &[color="secondary"] {
       background-color: $color-secondary;
+      color: white;
     }
     &[color="success"] {
       background-color: $color-success;
+      color: white;
     }
     &[color="error"] {
       background-color: $color-error;
+      color: white;
     }
     &[color="warning"] {
       background-color: $color-warning;
+      color: white;
     }
     background-color: rgba(0, 0, 0, 0.249);
   }
   &:focus {
     filter: brightness(0.8);
   }
+
   width: min-content;
   white-space: nowrap;
 }

@@ -4,6 +4,7 @@ import styles from "./index.module.scss";
 import { useState, type FocusEvent } from "react";
 import { FaExclamationCircle } from "react-icons/fa";
 import clsx from "clsx";
+import useUIContext from "@/contexts/UIContext/useUIContext";
 
 const TextInput = ({
   outlined,
@@ -13,6 +14,7 @@ const TextInput = ({
   className,
   ...props
 }: TextInputProps) => {
+  const context = useUIContext();
   const [focused, setFocused] = useState(false);
   const focusHandler = (e: FocusEvent<HTMLInputElement>) => {
     if (props.onFocus) props.onFocus(e);
@@ -29,6 +31,7 @@ const TextInput = ({
       className={clsx(styles.container, className)}
       role="textbox"
       title={props.title}
+      data-theme={context.theme}
     >
       {props.label && <label htmlFor={props.id}>{props.label}</label>}
       <div

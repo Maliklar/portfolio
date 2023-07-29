@@ -20,7 +20,6 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      {context.theme}
       <section className={styles.section1}>
         <h2>Hello There</h2>
         <p>My name is Malik Elbadri, I am a passionate frontend developer</p>
@@ -28,13 +27,16 @@ export default function Home() {
           This website is intended to demonstrate the skills and use frontend
           tools to create an amazing user interfaces
         </p>
+        <p>
+          The UI in this website is completely designed by me and I didn't use
+          any UI libraries such as MUI or Tailwind <br />
+          This is intentional to demonstrate styling skills
+        </p>
         <Button
-          color="primary"
           iconPosition="end"
           Icon={FaChevronDown}
           onClick={() => {
-            console.log("CLICKED");
-            context.switchTheme("dark");
+            context.switchTheme();
           }}
         >
           Scroll Down to start

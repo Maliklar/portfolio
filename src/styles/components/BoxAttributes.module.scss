@@ -1,6 +1,19 @@
 @import "@/styles/variables.scss";
 
 .boxAttributes {
+  &[data-theme="dark"] {
+    color: white;
+    &:hover {
+      background-color: $dark-theme-background-hover;
+    }
+  }
+  &[data-theme="light"] {
+    color: black;
+    &:hover {
+      background-color: $light-theme-background-hover;
+    }
+  }
+
   &[color="primary"] {
     background-color: $color-primary;
     color: white;
@@ -29,5 +42,6 @@
     border: $color-default-light-1 solid 1px;
     color: white;
   }
+
   border-radius: $border-radius;
 }

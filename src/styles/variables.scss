@@ -51,3 +51,19 @@ $border-radius-small: 4px;
 $shadow-strong: 0px 0px 5px black;
 $shadow-thin: 0px 0px 5px rgba(0, 0, 0, 0.3);
 $shadow-normal: 0px 0px 5px rgba(0, 0, 0, 0.5);
+
+// Theme colors division
+
+// Dark theme
+$dark-theme-background: $color-default-dark;
+$dark-theme-color: $white;
+$dark-theme-background-hover: $color-default-light-3;
+$dark-theme-input-background: $color-default-dark-2;
+$dark-theme-input-background-hover: $color-gray-9;
+
+// Light theme
+$light-theme-background: $white;
+$light-theme-color: black;
+$light-theme-background-hover: $color-blue-gray-1;
+$light-theme-input-background: $color-blue-gray-1;
+$light-theme-input-background-hover: $color-blue-gray-2;

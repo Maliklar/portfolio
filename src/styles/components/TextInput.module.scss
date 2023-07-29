@@ -6,6 +6,25 @@
   gap: 0.2em;
   width: 100%;
 
+  &[data-theme="dark"] {
+    .inputContainer {
+      color: $white;
+      background-color: $dark-theme-input-background;
+      &:hover {
+        background-color: $dark-theme-input-background-hover;
+      }
+    }
+  }
+  &[data-theme="light"] {
+    .inputContainer {
+      background-color: $light-theme-input-background;
+      color: black;
+      &:hover {
+        background-color: $light-theme-input-background-hover;
+      }
+    }
+  }
+
   .inputContainer {
     position: relative;
     display: flex;
@@ -13,8 +32,6 @@
     min-height: 1.8em;
     transition: all 0.5s;
     font-size: 1em;
-    color: $white;
-    background-color: $color-default-dark-2;
     border-radius: $border-radius $border-radius 0px 0px;
     transition: all 0.5s;
     padding: 0em 1em;
@@ -95,10 +112,6 @@
       &::before {
         transform: scale(1, 1);
       }
-    }
-    &:hover {
-      z-index: 20;
-      background-color: $color-gray-10;
     }
   }
 
