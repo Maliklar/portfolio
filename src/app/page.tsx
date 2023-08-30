@@ -8,6 +8,14 @@ import next from "@/assets/images/logos/next.png";
 import react from "@/assets/images/logos/react.png";
 import sass from "@/assets/images/logos/sass.png";
 import typescript from "@/assets/images/logos/typescript.png";
+import solidjs from "@/assets/images/logos/solidjs.png";
+import vuejs from "@/assets/images/logos/vuejs.png";
+import redux from "@/assets/images/logos/redux.png";
+import svelte from "@/assets/images/logos/svelte.png";
+import sql from "@/assets/images/logos/sql.png";
+import tailwind from "@/assets/images/logos/tailwind.webp";
+import java from "@/assets/images/logos/java.png";
+import webrtc from "@/assets/images/logos/webrtc.png";
 import TextInput from "@/components/Inputs/TextInput";
 import HeroSection from "@/components/Specific/Sections/HeroSection";
 import SkillCircle from "@/components/Specific/SkillCircle";
@@ -50,9 +58,28 @@ export default function Home() {
           </span>
         </section>
 
-        <section className={styles.section3}>
-          <h2>Examples</h2>
-          <TextInput type="text" />
+        {/* ________________________________________________________________________________________________________________________________ */}
+
+        <section className={styles.skillsSection}>
+          <h2>Skills</h2>
+          <ul className={styles.skillsContainer}>
+            <SkillCircle src={css.src} title="CSS" />
+            <SkillCircle src={javascript.src} title="JavaScript" />
+            <SkillCircle src={typescript.src} title="TypeScript" />
+            <SkillCircle src={html.src} title="HTML" />
+            <SkillCircle src={next.src} title="NextJs" />
+            <SkillCircle src={react.src} title="ReactJS" />
+            <SkillCircle src={git.src} title="Git" />
+            <SkillCircle src={sass.src} title="SASS" />
+            <SkillCircle src={webrtc.src} title="WebRTC" />
+            <SkillCircle src={react.src} title="React Native" />
+            <SkillCircle src={vuejs.src} title="VueJs" />
+            <SkillCircle src={solidjs.src} title="SolidJs" />
+            <SkillCircle src={svelte.src} title="Svelte" />
+            <SkillCircle src={java.src} title="Java" />
+            <SkillCircle src={sql.src} title="SQL" />
+            <SkillCircle src={tailwind.src} title="Tailwind" />
+          </ul>
         </section>
       </div>
     </main>
