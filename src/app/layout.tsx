@@ -19,18 +19,6 @@ export default function RootLayout({
     <html lang="en">
       <UIContext>
         <body className={inter.className}>
-          <header>
-            <h1>Malik Elbadri</h1>
-            <nav>
-              <ul>
-                <li>Home</li>
-                <li>Gallery</li>
-                <li>About Me</li>
-                <li>Experience</li>
-                <li>Education</li>
-              </ul>
-            </nav>
-          </header>
           {children}
           <footer></footer>
         </body>

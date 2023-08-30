@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import "@/styles/variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap");
 html {
   font-size: 16px;
 
@@ -17,7 +18,7 @@ html {
 * {
   position: relative;
 
-  font-family: "Roboto", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   box-sizing: border-box;
 }
 
@@ -31,6 +32,7 @@ p,
 strong,
 small {
   margin: 0px;
+  padding: 0px;
 }
 
 body {

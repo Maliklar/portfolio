@@ -4,7 +4,7 @@ $section-height: calc(100vh - $navigation-height);
 .main {
   display: flex;
   flex-direction: column;
-  padding: 0em 1em;
+  padding: 1rem;
 
   .section1 {
     display: flex;
