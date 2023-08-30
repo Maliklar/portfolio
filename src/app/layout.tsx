@@ -1,4 +1,5 @@
-import UIContext, { Context } from "@/contexts/UIContext";
+import Navigation from "@/components/Navigation";
+import UIContext from "@/contexts/UIContext";
 import "@/styles/globals.scss";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -18,6 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <UIContext>
+        <Navigation />
         <body className={inter.className}>
           {children}
           <footer></footer>

@@ -1,4 +1,3 @@
-import Button from "@/components/Buttons/Button";
 import styles from "./index.module.scss";
 import Image from "next/image";
 import MyImage from "@/assets/images/malik.jpg";

@@ -12,28 +12,49 @@ import TextInput from "@/components/Inputs/TextInput";
 import HeroSection from "@/components/Specific/Sections/HeroSection";
 import SkillCircle from "@/components/Specific/SkillCircle";
 import styles from "@/styles/pages/index.module.scss";
+import Image from "next/image";
+import AboutMe from "@/assets/images/about-me.jpg";
 export default function Home() {
   return (
     <main className={styles.main}>
       <HeroSection />
-      {/* <section className={styles.section2}>
-        <h2>My Skills</h2>
-        <ul>
-          <SkillCircle src={javascript.src} title="JavaScript" />
-          <SkillCircle src={typescript.src} title="TypeScript" />
-          <SkillCircle src={sass.src} title="SASS" />
-          <SkillCircle src={css.src} title="CSS" />
-          <SkillCircle src={html.src} title="HTML" />
-          <SkillCircle src={next.src} title="NextJs" />
-          <SkillCircle src={react.src} title="ReactJs" />
-          <SkillCircle src={git.src} title="Git" />
-        </ul>
-      </section> */}
 
-      {/* <section className={styles.section3}>
-        <h2>Examples</h2>
-        <TextInput type="text" />
-      </section> */}
+      <div className={styles.container}>
+        <section className={styles.aboutMeSection}>
+          <div className={styles.imageContainer} role="img" title="About Me">
+            <Image
+              src={AboutMe.src}
+              fill
+              style={{ objectFit: "cover" }}
+              alt="About Me"
+            />
+          </div>
+          <span className={styles.textContainer}>
+            <h2>About Me</h2>
+            <p>
+              I am a frontend developer specialized in building beautiful,
+              accessible, and responsive user interfaces for both mobile
+              applications using React Native and websites using various
+              technologies and frameworks.
+              <br />I start working on web development in 2019 and since then{" "}
+              {"I've"}
+              been learning new things on a daily basis.
+              <br />
+              During these years I completed multiple courses related{" "}
+              <strong> web </strong>
+              development, <strong> mobile </strong> application development,{" "}
+              <strong> SQL </strong> database, <strong> RESTful API </strong>,
+              and others.
+              <br />
+            </p>
+          </span>
+        </section>
+
+        <section className={styles.section3}>
+          <h2>Examples</h2>
+          <TextInput type="text" />
+        </section>
+      </div>
     </main>
   );
 }
