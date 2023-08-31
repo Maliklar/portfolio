@@ -16,13 +16,148 @@ import sql from "@/assets/images/logos/sql.png";
 import tailwind from "@/assets/images/logos/tailwind.webp";
 import java from "@/assets/images/logos/java.png";
 import webrtc from "@/assets/images/logos/webrtc.png";
-import TextInput from "@/components/Inputs/TextInput";
+import prisma from "@/assets/images/logos/prisma.webp";
+import nodejs from "@/assets/images/logos/nodejs.jpg";
 import HeroSection from "@/components/Specific/Sections/HeroSection";
 import SkillCircle from "@/components/Specific/SkillCircle";
 import styles from "@/styles/pages/index.module.scss";
 import Image from "next/image";
 import AboutMe from "@/assets/images/about-me.jpg";
+import { useState } from "react";
+
+enum SkillCategory {
+  SoftSkill,
+  Web,
+  Mobile,
+  Backend,
+  Language,
+}
+
+type InitialSkillsType = {
+  img: string;
+  title: string;
+  category: SkillCategory[];
+  shown: boolean;
+};
+const initialSkills: InitialSkillsType[] = [
+  { img: css.src, title: "CSS", category: [SkillCategory.Web], shown: true },
+  {
+    img: javascript.src,
+    title: "JavaScript",
+    category: [
+      SkillCategory.Web,
+      SkillCategory.Language,
+      SkillCategory.Backend,
+    ],
+    shown: true,
+  },
+  {
+    img: typescript.src,
+    title: "TypeScript",
+    category: [
+      SkillCategory.Web,
+      SkillCategory.Language,
+      SkillCategory.Backend,
+    ],
+    shown: true,
+  },
+  { img: html.src, title: "HTML", category: [SkillCategory.Web], shown: true },
+
+  {
+    img: next.src,
+    title: "NextJs",
+    category: [SkillCategory.Web, SkillCategory.Backend],
+    shown: true,
+  },
+  {
+    img: react.src,
+    title: "ReactJS",
+    category: [SkillCategory.Web],
+    shown: true,
+  },
+  { img: git.src, title: "Git", category: [SkillCategory.Web], shown: true },
+  { img: sass.src, title: "SASS", category: [SkillCategory.Web], shown: true },
+  {
+    img: webrtc.src,
+    title: "WebRTC",
+    category: [SkillCategory.Web],
+    shown: true,
+  },
+  {
+    img: react.src,
+    title: "React Native",
+    category: [SkillCategory.Mobile],
+    shown: true,
+  },
+  {
+    img: vuejs.src,
+    title: "VueJs",
+    category: [SkillCategory.Web],
+    shown: true,
+  },
+  {
+    img: solidjs.src,
+    title: "SolidJs",
+    category: [SkillCategory.Web],
+    shown: true,
+  },
+  {
+    img: svelte.src,
+    title: "Svelte",
+    category: [SkillCategory.Web],
+    shown: true,
+  },
+  {
+    img: java.src,
+    title: "Java",
+    category: [SkillCategory.Language],
+    shown: true,
+  },
+  {
+    img: sql.src,
+    title: "SQL",
+    category: [SkillCategory.Backend],
+    shown: true,
+  },
+  {
+    img: tailwind.src,
+    title: "Tailwind",
+    category: [SkillCategory.Web],
+    shown: true,
+  },
+  {
+    img: prisma.src,
+    title: "Prisma",
+    category: [SkillCategory.Backend],
+    shown: true,
+  },
+  {
+    img: nodejs.src,
+    title: "NodeJs",
+    category: [SkillCategory.Backend],
+    shown: true,
+  },
+  {
+    img: redux.src,
+    title: "Redux",
+    category: [SkillCategory.Web],
+    shown: true,
+  },
+];
+
 export default function Home() {
+  const [skills, setSkills] = useState(initialSkills);
+
+  const filterHandler = () => {
+    const filtered = skills.map((i) => {
+      if (i.category.includes(SkillCategory.Language)) {
+        i.shown = true;
+      } else i.shown = false;
+      return i;
+    });
+    setSkills(filtered);
+  };
+
   return (
     <main className={styles.main}>
       <HeroSection />
@@ -62,23 +197,22 @@ export default function Home() {
 
         <section className={styles.skillsSection}>
           <h2>Skills</h2>
+          <ul>
+            <li onClick={filterHandler}>Programming Languages</li>
+            <li>Web Development</li>
+            <li>Backend Development</li>
+            <li>Mobile Development</li>
+            <li>Soft Skills</li>
+          </ul>
           <ul className={styles.skillsContainer}>
-            <SkillCircle src={css.src} title="CSS" />
-            <SkillCircle src={javascript.src} title="JavaScript" />
-            <SkillCircle src={typescript.src} title="TypeScript" />
-            <SkillCircle src={html.src} title="HTML" />
-            <SkillCircle src={next.src} title="NextJs" />
-            <SkillCircle src={react.src} title="ReactJS" />
-            <SkillCircle src={git.src} title="Git" />
-            <SkillCircle src={sass.src} title="SASS" />
-            <SkillCircle src={webrtc.src} title="WebRTC" />
-            <SkillCircle src={react.src} title="React Native" />
-            <SkillCircle src={vuejs.src} title="VueJs" />
-            <SkillCircle src={solidjs.src} title="SolidJs" />
-            <SkillCircle src={svelte.src} title="Svelte" />
-            <SkillCircle src={java.src} title="Java" />
-            <SkillCircle src={sql.src} title="SQL" />
-            <SkillCircle src={tailwind.src} title="Tailwind" />
+            {skills.map((skill) => (
+              <SkillCircle
+                key={skill.title}
+                src={skill.img}
+                title={skill.title}
+                shown={skill.shown}
+              />
+            ))}
           </ul>
         </section>
       </div>

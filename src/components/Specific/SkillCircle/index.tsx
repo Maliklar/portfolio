@@ -3,10 +3,11 @@ import styles from "./index.module.scss";
 type Props = {
   src: string;
   title: string;
+  shown: boolean;
 };
-const SkillCircle = ({ src, title }: Props) => {
+const SkillCircle = ({ src, title, shown }: Props) => {
   return (
-    <li className={styles.container}>
+    <li className={styles.container} data-shown={shown}>
       <div className={styles.circleContainer}>
         <Image
           src={src}

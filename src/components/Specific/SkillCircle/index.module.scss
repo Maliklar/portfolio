@@ -5,6 +5,14 @@
   align-items: center;
   gap: 0.5em;
 
+  transition: all 0.3s;
+  &[data-shown="false"] {
+    animation-name: shrink;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+  }
+  overflow: hidden;
+
   .circleContainer {
     display: flex;
     align-items: center;
@@ -15,5 +23,19 @@
 
   strong {
     font-size: 1.2rem;
+  }
+}
+
+@keyframes shrink {
+  0% {
+    transform: scale(1);
+    height: 200px;
+    width: 200px;
+  }
+  100% {
+    transform: scale(0);
+    height: 0px;
+    width: 0px;
+    display: none;
   }
 }

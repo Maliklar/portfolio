@@ -4,13 +4,18 @@ $section-height: calc(100vh - $navigation-height);
 .main {
   display: flex;
   flex-direction: column;
+  color: white;
 
   .container {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
     color: white;
-    background-color: #060918;
+    backdrop-filter: blur(1px);
+    background-color: rgba(0, 0, 0, 0.314);
+
+    & > * {
+      padding: 1rem;
+    }
 
     .aboutMeSection {
       position: relative;
@@ -19,6 +24,7 @@ $section-height: calc(100vh - $navigation-height);
       align-items: center;
       height: 100vh;
       padding: 1rem;
+      background-color: #291e29;
 
       .imageContainer {
         position: relative;
@@ -51,11 +57,11 @@ $section-height: calc(100vh - $navigation-height);
 
       @media screen and (max-width: 880px) {
         flex-direction: column;
+        text-align: center;
         .imageContainer {
           flex: unset;
-          min-height: 50%;
+          max-height: 40%;
         }
-        text-align: center;
       }
     }
 
@@ -74,10 +80,12 @@ $section-height: calc(100vh - $navigation-height);
       }
       .skillsContainer {
         display: flex;
+        justify-content: center;
+        padding: 0px;
         flex-wrap: wrap;
         width: 100%;
         gap: 4rem;
-        justify-content: space-evenly;
+        transition: all 0.5s;
       }
 
       @media screen and (max-width: 880px) {
@@ -124,44 +132,5 @@ $section-height: calc(100vh - $navigation-height);
       flex-wrap: wrap;
       gap: 1em;
     }
-  }
-}
-
-@keyframes section1_h2 {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-}
-@keyframes section1_p {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  50% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-}
-@keyframes section1_button {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  75% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  100% {
-    opacity: default;
-    transform: translateY(0%);
   }
 }
