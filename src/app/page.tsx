@@ -208,9 +208,11 @@ export default function Home() {
 
         <section className={styles.projectsSection}>
           <h2>Projects</h2>
-          {projects.map((project) => (
-            <ProjectCard {...project} key={project.title} />
-          ))}
+          <div className={styles.content}>
+            {projects.map((project) => (
+              <ProjectCard {...project} key={project.title} />
+            ))}
+          </div>
         </section>
       </div>
     </main>
