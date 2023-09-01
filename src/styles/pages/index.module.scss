@@ -10,8 +10,6 @@ $section-height: calc(100vh - $navigation-height);
     display: flex;
     flex-direction: column;
     color: white;
-    backdrop-filter: blur(1px);
-    background-color: rgba(0, 0, 0, 0.314);
 
     & > * {
       padding: 1rem;

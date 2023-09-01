@@ -27,30 +27,27 @@ const ProjectCard = ({
     <div className={styles.projectCard}>
       <div className={styles.imageContainer}>
         <Image src={src} fill alt={title} style={{ objectFit: "cover" }} />
-        <div />
       </div>
 
-      <div className={styles.content}>
-        <strong className={styles.title}>{title}</strong>
-        <div className={styles.tagsContainer}>
-          {skills.map(({ title, color }) => (
-            <SkillTag key={title} title={title} color={color} />
-          ))}
-        </div>
-        <p>{description}</p>
+      <strong className={styles.title}>{title}</strong>
+      <div className={styles.tagsContainer}>
+        {skills.map(({ title, color }) => (
+          <SkillTag key={title} title={title} color={color} />
+        ))}
+      </div>
+      <p>{description}</p>
 
-        <div className={styles.footer}>
-          {gitHub && (
-            <Link className={styles.gitHub} href={gitHub}>
-              GitHub <AiFillGithub fontSize="1rem" />
-            </Link>
-          )}
-          {url && (
-            <Link className={styles.url} href={url}>
-              Preview <PiArrowSquareOut fontSize="1rem" />
-            </Link>
-          )}
-        </div>
+      <div className={styles.footer}>
+        {gitHub && (
+          <Link className={styles.gitHub} href={gitHub}>
+            GitHub <AiFillGithub fontSize="1rem" />
+          </Link>
+        )}
+        {url && (
+          <Link className={styles.url} href={url}>
+            Preview <PiArrowSquareOut fontSize="1rem" />
+          </Link>
+        )}
       </div>
     </div>
   );
