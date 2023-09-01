@@ -43,12 +43,16 @@ const projects = [
     src: IPAddressTracker.src,
     description: "Get the current location based on the IP address.",
     skills: [skills.CSS, skills.JavaScript, skills.HTML],
+    url: "https://maliklar.github.io/rest-countries-api-with-color-theme-switcher-master/",
+    gitHub: "",
   },
   {
     title: "Space Tourism",
     src: SpaceTourism.src,
     description: "A concept website allows people to book a flight to space.",
     skills: [skills.VueJs, skills.PWA],
+    url: "https://maliklar.github.io/rest-countries-api-with-color-theme-switcher-master/",
+    gitHub: "",
   },
   {
     title: "Countries Borders",
@@ -57,6 +61,7 @@ const projects = [
       "A website that allow users to search for their country and check bordered countries",
     skills: [skills.VueJs, skills.PWA],
     url: "https://maliklar.github.io/rest-countries-api-with-color-theme-switcher-master/",
+    gitHub: "",
   },
   {
     title: "LoopStudios",
@@ -64,6 +69,7 @@ const projects = [
     description: "LoopStudios Landing page",
     skills: [skills.JavaScript, skills.HTML, skills.CSS],
     url: "https://maliklar.github.io/loopstudios-landing-page-main/",
+    gitHub: "",
   },
   {
     title: "Time Tracker",
@@ -71,6 +77,7 @@ const projects = [
     description: "Single page that allows users to track daily events",
     skills: [skills.JavaScript, skills.HTML, skills.CSS],
     url: "https://maliklar.github.io/time-tracking-dashboard-main/",
+    gitHub: "",
   },
   {
     title: "Furniture Page",
@@ -78,6 +85,7 @@ const projects = [
     description: "Single page shows furniture",
     skills: [skills.JavaScript, skills.HTML, skills.CSS],
     url: "https://maliklar.github.io/room-homepage-master/",
+    gitHub: "https://maliklar.github.io/room-homepage-master/",
   },
   {
     title: "SpaceX Landing Clone",
@@ -85,13 +93,15 @@ const projects = [
     description: "Clone of SpaceX website",
     skills: [skills.JavaScript, skills.HTML, skills.CSS],
     url: "https://maliklar.github.io/room-homepage-master/",
+    gitHub: "https://maliklar.github.io/room-homepage-master/",
   },
   {
     title: "Eatly Landing Page",
-    src: SpaceX.src,
+    src: Eatly.src,
     description: "Landing page for Eatly",
     skills: [skills.NextJs, skills.TypeScript],
     url: "https://mae-ndo8ivo95-maliklar.vercel.app/",
+    gitHub: "https://maliklar.github.io/room-homepage-master/",
   },
 ];
 
