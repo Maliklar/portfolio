@@ -9,13 +9,7 @@ const SkillCircle = ({ src, title, shown }: Props) => {
   return (
     <li className={styles.container} data-shown={shown}>
       <div className={styles.circleContainer}>
-        <Image
-          src={src}
-          height={100}
-          width={100}
-          style={{ objectFit: "contain" }}
-          alt={title}
-        />
+        <Image src={src} fill style={{ objectFit: "contain" }} alt={title} />
       </div>
       <strong>{title}</strong>
     </li>
