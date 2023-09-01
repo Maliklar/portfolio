@@ -2,7 +2,7 @@
 
 import styles from "./index.module.scss";
 import Image from "next/image";
-import MyImage from "@/assets/images/malik.jpg";
+import MyImage from "@/assets/images/malik.png";
 import Background from "@/assets/svg/bg.svg";
 import { FaChevronRight } from "react-icons/fa";
 import { useEffect, useState } from "react";
@@ -29,12 +29,18 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className={styles.container}>
+    <section
+      className={styles.container}
+      style={{
+        top: opacity <= 0 ? "0px" : -scrollY / 3 + "px",
+      }}
+    >
       <div
         role="img"
-        title="Me"
+        title="Malik Elbadri"
         style={{
           opacity: opacity,
+          zIndex: opacity <= 0 ? -100 : "unset",
         }}
         className={styles.imageContainer}
       >
@@ -50,6 +56,7 @@ const HeroSection = () => {
         className={styles.content}
         style={{
           opacity: opacity,
+          zIndex: opacity <= 0 ? -100 : "unset",
         }}
       >
         <h1 className={styles.header}>Hello, {"I'm "}Malik.</h1>
