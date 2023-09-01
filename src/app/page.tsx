@@ -152,6 +152,8 @@ const initialSkills: InitialSkillsType[] = [
 export default function Home() {
   const [skills, setSkills] = useState(initialSkills);
 
+  const [projectsFilter, setProjectsFilter] = useState(projects);
+
   const [filter, setFilter] = useState(0);
 
   return (
