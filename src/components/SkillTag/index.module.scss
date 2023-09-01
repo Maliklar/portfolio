@@ -1,0 +1,26 @@
+.tag {
+  position: relative;
+  width: min-content;
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  overflow: hidden;
+  z-index: 10;
+  &::after {
+    content: "";
+    background-color: white;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: transform 0.3s;
+    transform: translateY(-102%);
+    z-index: -1;
+  }
+  &:hover {
+    color: black !important;
+    &::after {
+      transform: translateY(0%);
+    }
+  }
+}

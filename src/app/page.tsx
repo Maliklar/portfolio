@@ -18,12 +18,16 @@ import java from "@/assets/images/logos/java.png";
 import webrtc from "@/assets/images/logos/webrtc.png";
 import prisma from "@/assets/images/logos/prisma.webp";
 import nodejs from "@/assets/images/logos/nodejs.jpg";
+import TEST from "@/assets/images/projects/test.png";
 import HeroSection from "@/components/Specific/Sections/HeroSection";
 import SkillCircle from "@/components/Specific/SkillCircle";
 import styles from "@/styles/pages/index.module.scss";
 import Image from "next/image";
 import AboutMe from "@/assets/images/about-me.jpg";
 import { useState } from "react";
+import SkillTag from "@/components/SkillTag";
+import projects from "@/assets/data/projects";
+import ProjectCard from "@/components/Cards/ProjectCard";
 
 enum SkillCategory {
   SoftSkill,
@@ -148,16 +152,6 @@ const initialSkills: InitialSkillsType[] = [
 export default function Home() {
   const [skills, setSkills] = useState(initialSkills);
 
-  const filterHandler = () => {
-    const filtered = skills.map((i) => {
-      if (i.category.includes(SkillCategory.Language)) {
-        i.shown = true;
-      } else i.shown = false;
-      return i;
-    });
-    setSkills(filtered);
-  };
-
   return (
     <main className={styles.main}>
       <HeroSection />
@@ -197,13 +191,7 @@ export default function Home() {
 
         <section className={styles.skillsSection}>
           <h2>Skills</h2>
-          <ul>
-            <li onClick={filterHandler}>Programming Languages</li>
-            <li>Web Development</li>
-            <li>Backend Development</li>
-            <li>Mobile Development</li>
-            <li>Soft Skills</li>
-          </ul>
+
           <ul className={styles.skillsContainer}>
             {skills.map((skill) => (
               <SkillCircle
@@ -214,6 +202,15 @@ export default function Home() {
               />
             ))}
           </ul>
+        </section>
+
+        {/* ________________________________________________________________________________________________________________________________ */}
+
+        <section className={styles.projectsSection}>
+          <h2>Projects</h2>
+          {projects.map((project) => (
+            <ProjectCard {...project} key={project.title} />
+          ))}
         </section>
       </div>
     </main>

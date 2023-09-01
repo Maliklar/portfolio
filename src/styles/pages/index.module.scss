@@ -70,7 +70,7 @@ $section-height: calc(100vh - $navigation-height);
       display: flex;
       flex-direction: column;
       align-items: center;
-      height: 100vh;
+
       gap: 2rem;
       padding: 1rem;
 
@@ -98,39 +98,84 @@ $section-height: calc(100vh - $navigation-height);
       }
     }
   }
-  .section1 {
+  .projectsSection {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: $section-height;
-    text-align: center;
-    padding: 1em;
+    gap: 1rem;
     h2 {
-      font-size: 5em;
-      animation: section1_h2 0.5s forwards;
-      margin-top: auto;
+      font-size: 3rem;
+      font-weight: 100;
     }
-    p {
-      font-size: 1.5em;
-      animation: section1_p 1s forwards;
-    }
-
-    button {
-      margin-top: auto;
-      animation: section1_button 1.5s forwards;
-    }
-  }
-
-  .section2 {
-    height: $section-height;
-
-    ul {
+    .projectCard {
+      overflow: hidden;
+      position: relative;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1em;
+      flex-direction: column;
+      height: 400px;
+      width: 280px;
+      background-color: #291e29;
+
+      border-radius: 8px;
+      .imageContainer {
+        position: relative;
+        height: 50%;
+        width: 100%;
+        .title {
+          transition: box-shadow 0.3s;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          top: 0;
+          padding: 1rem;
+          box-shadow: inset 0px -10px 30px black;
+          display: flex;
+          align-items: flex-end;
+        }
+      }
+      .content {
+        .tagsContainer {
+          display: flex;
+          gap: 0.4rem;
+          flex-wrap: wrap;
+          cursor: default;
+          .tag {
+            color: yellow;
+            border: 1px solid yellow;
+            width: min-content;
+            padding: 0.3rem 0.8rem;
+            border-radius: 100px;
+            overflow: hidden;
+            z-index: 10;
+            &::after {
+              content: "";
+              position: absolute;
+              height: 100%;
+              top: 0;
+              left: 0;
+              width: 100%;
+              background-color: yellow;
+              transition: transform 0.3s;
+              transform: translateY(-102%);
+              z-index: -1;
+            }
+            &:hover {
+              color: black;
+              &::after {
+                transform: translateY(0%);
+              }
+            }
+          }
+        }
+
+        background-color: inherit;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem;
+      }
     }
   }
 }
