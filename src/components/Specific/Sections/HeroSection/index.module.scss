@@ -18,12 +18,8 @@
     max-width: 25rem;
     max-height: 25rem;
     min-height: 25rem;
-
     // border-radius: 100%;
     overflow: hidden;
-    animation-name: slideToRight;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
     border: solid white 1px;
     background-color: rgba(0, 0, 0, 0);
     backdrop-filter: blur(5px);
@@ -41,21 +37,11 @@
         color: white;
         font-weight: 300;
       }
-      opacity: 0;
-      animation-name: slideToLeft;
-      animation-duration: 0.3s;
-      animation-fill-mode: forwards;
     }
 
     .subtitle {
       font-size: 2rem;
       font-weight: 300;
-
-      opacity: 0;
-      animation-name: slideToLeft;
-      animation-duration: 0.3s;
-      animation-delay: 0.3s;
-      animation-fill-mode: forwards;
       span {
         color: purple;
         font-weight: 400;
@@ -76,11 +62,6 @@
       font-size: 1rem;
       cursor: pointer;
       overflow: hidden;
-      opacity: 0;
-      animation-name: slideToLeft;
-      animation-duration: 0.3s;
-      animation-delay: 0.9s;
-      animation-fill-mode: forwards;
       color: white;
       background-color: rgba(0, 0, 0, 0);
       backdrop-filter: blur(5px);
@@ -128,29 +109,5 @@
         align-self: stretch;
       }
     }
-  }
-}
-
-@keyframes slideToRight {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}
-
-@keyframes slideToLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0%);
   }
 }

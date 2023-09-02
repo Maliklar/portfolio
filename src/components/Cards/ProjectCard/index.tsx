@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { AiFillGithub } from "react-icons/ai";
 import { PiArrowSquareOut } from "react-icons/pi";
+import Reveal from "@/components/Reveal";
 type Props = {
   title: string;
   src: string;
@@ -24,10 +25,10 @@ const ProjectCard = ({
   description,
 }: Props) => {
   return (
-    <div className={styles.projectCard}>
-      <div className={styles.imageContainer}>
+    <Reveal className={styles.projectCard}>
+      <Reveal className={styles.imageContainer}>
         <Image src={src} fill alt={title} style={{ objectFit: "cover" }} />
-      </div>
+      </Reveal>
 
       <strong className={styles.title}>{title}</strong>
       <div className={styles.tagsContainer}>
@@ -49,7 +50,7 @@ const ProjectCard = ({
           </Link>
         )}
       </div>
-    </div>
+    </Reveal>
   );
 };
 export default ProjectCard;

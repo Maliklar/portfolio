@@ -29,6 +29,7 @@ import SkillTag from "@/components/SkillTag";
 import projects from "@/assets/data/projects";
 import ProjectCard from "@/components/Cards/ProjectCard";
 import { CSSTransition } from "react-transition-group";
+import Reveal from "@/components/Reveal";
 enum SkillCategory {
   SoftSkill,
   Web,
@@ -162,15 +163,15 @@ export default function Home() {
 
       <div className={styles.container}>
         <section className={styles.aboutMeSection}>
-          <div className={styles.imageContainer} role="img" title="About Me">
+          <Reveal className={styles.imageContainer} role="img" title="About Me">
             <Image
               src={AboutMe.src}
               fill
               style={{ objectFit: "cover" }}
               alt="About Me"
             />
-          </div>
-          <span className={styles.textContainer}>
+          </Reveal>
+          <Reveal className={styles.textContainer}>
             <h2>About Me</h2>
             <p>
               I am a frontend developer specialized in building beautiful,
@@ -188,7 +189,7 @@ export default function Home() {
               and others.
               <br />
             </p>
-          </span>
+          </Reveal>
         </section>
 
         {/* ________________________________________________________________________________________________________________________________ */}
@@ -198,12 +199,13 @@ export default function Home() {
 
           <ul className={styles.skillsContainer}>
             {skills.map((skill) => (
-              <SkillCircle
-                key={skill.title}
-                src={skill.img}
-                title={skill.title}
-                shown={skill.shown}
-              />
+              <Reveal key={skill.title}>
+                <SkillCircle
+                  src={skill.img}
+                  title={skill.title}
+                  shown={skill.shown}
+                />
+              </Reveal>
             ))}
           </ul>
         </section>
@@ -231,7 +233,7 @@ export default function Home() {
           </div>
           <div className={styles.content}>
             {projects.map((project) => (
-              <ProjectCard {...project} key={project.title} />
+              <ProjectCard key={project.title} {...project} />
             ))}
           </div>
         </section>

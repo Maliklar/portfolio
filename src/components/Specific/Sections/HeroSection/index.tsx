@@ -6,6 +6,7 @@ import MyImage from "@/assets/images/malik.png";
 import Background from "@/assets/svg/bg.svg";
 import { FaChevronRight } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import Reveal from "@/components/Reveal";
 const HeroSection = () => {
   const [opacity, setOpacity] = useState(1);
   const continueClickHandler = () => {
@@ -35,7 +36,7 @@ const HeroSection = () => {
         top: opacity <= 0 ? "0px" : -scrollY / 3 + "px",
       }}
     >
-      <div
+      <Reveal
         role="img"
         title="Malik Elbadri"
         style={{
@@ -51,8 +52,8 @@ const HeroSection = () => {
           alt="Malik Elbadri"
           priority
         />
-      </div>
-      <div
+      </Reveal>
+      <Reveal
         className={styles.content}
         style={{
           opacity: opacity,
@@ -60,6 +61,7 @@ const HeroSection = () => {
         }}
       >
         <h1 className={styles.header}>Hello, {"I'm "}Malik.</h1>
+
         <p className={styles.subtitle}>
           I am a full stack web developer specialized in building and
           maintaining beautiful and accessible websites using various
@@ -69,7 +71,8 @@ const HeroSection = () => {
         <button className={styles.button} onClick={continueClickHandler}>
           CHECKOUT MY WORK <FaChevronRight />{" "}
         </button>
-      </div>
+      </Reveal>
+
       <Image
         className={styles.background}
         src={Background}
