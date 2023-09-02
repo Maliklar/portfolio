@@ -1,15 +1,17 @@
 import Image from "next/image";
 import styles from "./index.module.scss";
+import { IconType } from "react-icons";
 type Props = {
-  src: string;
+  src: IconType;
   title: string;
   shown: boolean;
+  color: string;
 };
-const SkillCircle = ({ src, title, shown }: Props) => {
+const SkillCircle = ({ src: Icon, title, shown }: Props) => {
   return (
     <li className={styles.container} data-shown={shown}>
       <div className={styles.circleContainer}>
-        <Image src={src} fill style={{ objectFit: "contain" }} alt={title} />
+        <Icon size="5rem" />
       </div>
       <strong>{title}</strong>
     </li>

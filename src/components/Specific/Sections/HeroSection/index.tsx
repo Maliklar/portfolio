@@ -77,13 +77,14 @@ const HeroSection = () => {
         </button>
       </Reveal>
 
-      <Image
-        className={styles.background}
-        src={Background}
-        fill
-        style={{ objectFit: "cover" }}
-        alt="background"
-      />
+      <div role="img" title="Background" className={styles.background}>
+        <Image
+          src={Background}
+          fill
+          style={{ objectFit: "cover" }}
+          alt="background"
+        />
+      </div>
     </section>
   );
 };
