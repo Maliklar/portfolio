@@ -40,7 +40,7 @@ import {
 } from "react-icons/bi";
 import { SiPrisma, SiWebrtc } from "react-icons/si";
 
-import { TbBrandSolidjs, TbBrandSvelte } from "react-icons/tb";
+import { TbBrandSolidjs, TbBrandNextjs, TbBrandSvelte } from "react-icons/tb";
 
 enum SkillCategory {
   Language,
@@ -87,7 +87,7 @@ const initialSkills: InitialSkillsType[] = [
   },
 
   {
-    img: BiLogoReact,
+    img: TbBrandNextjs,
     title: "NextJs",
     category: SkillCategory.Framework,
     shown: true,

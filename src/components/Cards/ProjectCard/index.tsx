@@ -24,31 +24,42 @@ const ProjectCard = ({
   url,
   description,
 }: Props) => {
+  const directions = ["left", "right", "top", "bottom"];
   return (
-    <Reveal className={styles.projectCard}>
-      <Reveal className={styles.imageContainer}>
-        <Image src={src} fill alt={title} style={{ objectFit: "cover" }} />
-      </Reveal>
-
+    <Reveal
+      direction={
+        directions[Math.floor(Math.random() * directions.length)] as
+          | "left"
+          | "right"
+          | "bottom"
+          | "top"
+      }
+      className={styles.projectCard}
+    >
       <strong className={styles.title}>{title}</strong>
-      <div className={styles.tagsContainer}>
-        {skills.map(({ title, color }) => (
-          <SkillTag key={title} title={title} color={color} />
-        ))}
+      <div className={styles.imageContainer}>
+        <Image src={src} fill alt={title} style={{ objectFit: "cover" }} />
       </div>
-      <p>{description}</p>
 
-      <div className={styles.footer}>
-        {gitHub && (
-          <Link className={styles.gitHub} href={gitHub}>
-            GitHub <AiFillGithub fontSize="1rem" />
-          </Link>
-        )}
-        {url && (
-          <Link className={styles.url} href={url}>
-            Preview <PiArrowSquareOut fontSize="1rem" />
-          </Link>
-        )}
+      <div className={styles.content}>
+        <div className={styles.tagsContainer}>
+          {skills.map(({ title, color }) => (
+            <SkillTag key={title} title={title} color={color} />
+          ))}
+        </div>
+
+        <div className={styles.footer}>
+          {gitHub && (
+            <Link className={styles.gitHub} href={gitHub}>
+              GitHub <AiFillGithub fontSize="1rem" />
+            </Link>
+          )}
+          {url && (
+            <Link className={styles.url} href={url}>
+              Preview <PiArrowSquareOut fontSize="1rem" />
+            </Link>
+          )}
+        </div>
       </div>
     </Reveal>
   );

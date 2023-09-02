@@ -48,6 +48,7 @@ const Reveal = ({ children, direction, ...props }: Props) => {
       break;
   }
   return (
+    //@ts-ignore
     <motion.div
       ref={ref}
       variants={{

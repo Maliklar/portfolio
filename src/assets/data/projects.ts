@@ -21,11 +21,11 @@ const skills = {
   },
   TypeScript: {
     title: "TypeScript",
-    color: "#007acc",
+    color: "#ADD8E6",
   },
   VueJs: {
     title: "VueJs",
-    color: "green",
+    color: "lightgreen",
   },
   PWA: {
     title: "PWA",
