@@ -14,9 +14,10 @@ const Navigation = () => {
   useLayoutEffect(() => {
     let lastPosition = 0;
     function scrollHandler() {
-      if (lastPosition > scrollY) setHidden(false);
-      else if (scrollY > 400) setHidden(true);
-      lastPosition = scrollY;
+      if (typeof window === "undefined") return;
+      if (lastPosition > window.scrollY) setHidden(false);
+      else if (window.scrollY > 400) setHidden(true);
+      lastPosition = window.scrollY;
     }
     document.addEventListener("scroll", scrollHandler);
 

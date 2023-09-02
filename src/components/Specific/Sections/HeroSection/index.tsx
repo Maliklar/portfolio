@@ -19,7 +19,8 @@ const HeroSection = () => {
 
   useEffect(() => {
     function scrollHandler() {
-      const opacity = 1 - scrollY / innerHeight;
+      if (typeof window === "undefined") return;
+      const opacity = 1 - window.scrollY / innerHeight;
       setOpacity(opacity === Infinity ? 1 : opacity);
     }
     addEventListener("scroll", scrollHandler);
@@ -33,7 +34,10 @@ const HeroSection = () => {
     <section
       className={styles.container}
       style={{
-        top: opacity <= 0 ? "0px" : -scrollY / 3 + "px",
+        top:
+          opacity <= 0
+            ? "0px"
+            : -(typeof window === "object" ? window.scrollY : 0) / 3 + "px",
       }}
     >
       <Reveal
