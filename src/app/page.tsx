@@ -23,7 +23,7 @@ export default function Home() {
 
         <section className={styles.projectsSection}>
           <h2>Projects</h2>
-          <div className={styles.filters}>
+          {/* <div className={styles.filters}>
             <span data-state={filter === 0} onClick={() => setFilter(0)}>
               NextJs
             </span>
@@ -39,7 +39,7 @@ export default function Home() {
             <span data-state={filter === 4} onClick={() => setFilter(4)}>
               Mobile
             </span>
-          </div>
+          </div> */}
           <div className={styles.content}>
             {projects.map((project) => (
               <ProjectCard key={project.title} {...project} />

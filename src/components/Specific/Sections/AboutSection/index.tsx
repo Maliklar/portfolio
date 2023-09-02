@@ -3,6 +3,7 @@ import styles from "./index.module.scss";
 import Image from "next/image";
 import AboutMe from "@/assets/images/about-me.jpg";
 import { FaAndroid, FaBook, FaChrome, FaMobile } from "react-icons/fa";
+import { AiOutlineDownload } from "react-icons/ai";
 
 const AboutSection = () => {
   return (
@@ -43,7 +44,7 @@ const AboutSection = () => {
             </p>
           </Reveal>
           <Reveal
-            direction={"top"}
+            direction={"bottom"}
             className={`${styles.card} ${styles.human}`}
           >
             <h3>
@@ -56,6 +57,12 @@ const AboutSection = () => {
               open to learn new technologies and techniques that help improve
               the general development experience for me and my team as well.
             </p>
+          </Reveal>
+          <Reveal direction={"top"} className={`${styles.card} ${styles.cv}`}>
+            <h3>
+              {" "}
+              <AiOutlineDownload /> Download My CV
+            </h3>
           </Reveal>
         </div>
       </div>

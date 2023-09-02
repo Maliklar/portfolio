@@ -208,7 +208,7 @@ const SkillsSection = () => {
   return (
     <section className={styles.skillsSection}>
       <h2>Skills</h2>
-      <div className={styles.filters}>
+      {/* <div className={styles.filters}>
         <span
           onClick={() => filterChangeHandler()}
           data-active={currentFilter === undefined}
@@ -233,7 +233,7 @@ const SkillsSection = () => {
         >
           Tools
         </span>
-      </div>
+      </div> */}
 
       <ul className={styles.skillsContainer}>
         {skills.map((skill) => {

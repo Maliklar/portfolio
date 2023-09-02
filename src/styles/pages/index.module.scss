@@ -4,15 +4,15 @@
   display: flex;
   flex-direction: column;
   color: white;
-
   .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     color: $white;
     background-color: $color-black;
-
+    gap: 2rem;
     padding: 1rem;
+    padding-top: 1.5rem;
     & > * {
       max-width: 1300px;
     }
@@ -20,16 +20,16 @@
   .projectsSection {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 1rem;
     h2 {
       font-size: 3rem;
-      font-weight: 100;
+      font-weight: 300;
     }
 
     .filters {
       display: flex;
       gap: 1rem;
+      align-self: center;
 
       border: 1px solid white;
 
@@ -62,7 +62,7 @@
     .content {
       display: flex;
       justify-content: center;
-      gap: 1rem;
+      gap: 1.5rem;
       flex-wrap: wrap;
     }
   }

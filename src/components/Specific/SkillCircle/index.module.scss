@@ -3,21 +3,15 @@
 .container {
   list-style: none;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.5em;
   padding: 0.3rem;
-  width: 8rem;
-  background-color: $color-green;
-  color: $color-dark-purple;
+
+  // background-color: $color-green;
+  // color: $color-dark-purple;
   border-radius: 8px;
 
   transition: all 0.3s;
-  &[data-shown="false"] {
-    animation-name: shrink;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-  }
+
   overflow: hidden;
 
   .circleContainer {
@@ -26,27 +20,26 @@
     justify-content: center;
     overflow: hidden;
     border-radius: 8px;
-    height: 5rem;
-    width: 5rem;
+    min-height: 4rem;
+    min-width: 4rem;
+    border-radius: 100%;
+    background-color: $color-green;
+    color: black;
+    z-index: 1;
+    box-shadow: 0px 0px 8px $color-dark-purple;
   }
 
   strong {
     flex: 1;
     font-size: 1.2rem;
     font-weight: 400;
-  }
-}
-
-@keyframes shrink {
-  0% {
-    transform: scale(1);
-    height: 200px;
-    width: 200px;
-  }
-  100% {
-    transform: scale(0);
-    height: 0px;
-    width: 0px;
-    display: none;
+    background-color: $color-blue;
+    padding: 0.7rem;
+    padding-top: 0.9rem;
+    padding-inline-start: 3.2rem;
+    padding-inline-end: 1.2rem;
+    margin-left: -2.5rem;
+    z-index: 0;
+    border-radius: 100px;
   }
 }
