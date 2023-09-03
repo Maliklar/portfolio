@@ -12,7 +12,7 @@ const HeroSection = () => {
   return (
     <section className={styles.container}>
       <div className={styles.mainContent}>
-        <Reveal className={styles.content}>
+        <Reveal instant className={styles.content} direction="left">
           <h1 className={styles.header}>Hello, {"I'm "}Malik.</h1>
 
           <p className={styles.subtitle}>
@@ -26,6 +26,7 @@ const HeroSection = () => {
           </button>
         </Reveal>
         <Reveal
+          instant
           direction="left"
           role="img"
           title="Malik Elbadri"
@@ -44,11 +45,17 @@ const HeroSection = () => {
       </div>
       <div className={styles.footer}>
         <div className={styles.line} />
-        <FaGithub />
+        <Reveal direction="left" instant>
+          <FaGithub />
+        </Reveal>
         <div className={styles.line} />
-        <FaLinkedin />
+        <Reveal direction="right" instant>
+          <FaLinkedin />
+        </Reveal>
         <div className={styles.line} />
-        <SiFrontendmentor />
+        <Reveal direction="left" instant>
+          <SiFrontendmentor />
+        </Reveal>
         <div className={styles.line} />
       </div>
     </section>
