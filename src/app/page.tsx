@@ -17,13 +17,12 @@ export default function Home() {
     <main className={styles.main}>
       <HeroSection />
 
-      <div className={styles.container}>
-        <AboutSection />
-        <SkillsSection />
+      <AboutSection />
+      <SkillsSection />
 
-        <section className={styles.projectsSection}>
-          <h2>Projects</h2>
-          {/* <div className={styles.filters}>
+      <section className={styles.projectsSection}>
+        <h2>Projects</h2>
+        {/* <div className={styles.filters}>
             <span data-state={filter === 0} onClick={() => setFilter(0)}>
               NextJs
             </span>
@@ -40,13 +39,12 @@ export default function Home() {
               Mobile
             </span>
           </div> */}
-          <div className={styles.content}>
-            {projects.map((project) => (
-              <ProjectCard key={project.title} {...project} />
-            ))}
-          </div>
-        </section>
-      </div>
+        <div className={styles.content}>
+          {projects.map((project) => (
+            <ProjectCard key={project.title} {...project} />
+          ))}
+        </div>
+      </section>
     </main>
   );
 }

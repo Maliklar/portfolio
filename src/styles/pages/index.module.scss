@@ -4,12 +4,13 @@
   display: flex;
   flex-direction: column;
   color: white;
+  background-color: $color-black;
+
   .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     color: $white;
-    background-color: $color-black;
     gap: 2rem;
     padding: 1rem;
     padding-top: 1.5rem;

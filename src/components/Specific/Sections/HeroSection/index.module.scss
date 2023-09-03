@@ -1,3 +1,5 @@
+@import "@/styles/variables.scss";
+
 .container {
   display: flex;
   align-items: center;
@@ -5,24 +7,41 @@
   min-height: 100dvh;
   height: 100dvh;
   max-height: 100dvh;
-  padding: 2rem;
-  position: sticky;
   top: 0px;
+  padding: 2rem;
 
-  .imageContainer {
+  .imageOuterContainer {
     position: relative;
+    border: 1px solid $color-blue;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
+    border-radius: 8px;
     min-width: 25rem;
     max-width: 25rem;
     max-height: 25rem;
     min-height: 25rem;
-    // border-radius: 100%;
-    overflow: hidden;
-    border: solid white 1px;
-    background-color: rgba(0, 0, 0, 0);
-    backdrop-filter: blur(5px);
+    height: 25rem;
+    width: 25rem;
+
+    .imageContainer {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 25rem;
+      max-width: 25rem;
+      max-height: 25rem;
+      min-height: 25rem;
+      height: 25rem;
+      width: 25rem;
+      top: -1rem;
+      left: -1rem;
+      border-radius: 8px;
+      overflow: hidden;
+      border: solid $color-green 1px;
+      background-color: $color-black;
+      overflow: hidden;
+    }
   }
 
   .content {
@@ -57,19 +76,19 @@
       gap: 3rem;
       background-color: transparent;
       outline: none;
-      border: 2px solid white;
-      padding: 1.2rem 1rem 1rem 1.3rem;
+      border: 2px solid $color-green;
+      border-radius: 8px;
+      padding: 1.4rem 1.2rem 1.2rem 1.5rem;
       font-size: 1rem;
       cursor: pointer;
       overflow: hidden;
-      color: white;
-      background-color: rgba(0, 0, 0, 0);
-      backdrop-filter: blur(5px);
+      color: $color-green;
+      z-index: 1;
 
       &::before {
         content: "";
         position: absolute;
-        background-color: white;
+        background-color: $color-blue;
         width: 100%;
         height: 100%;
         left: 0;
@@ -83,7 +102,7 @@
         font-size: 1rem;
       }
       &:hover {
-        color: purple;
+        color: $color-dark-purple;
         svg {
           transform: rotate(90deg);
         }
@@ -93,15 +112,31 @@
       }
     }
   }
-  .background {
-    position: fixed;
-    // height: 50px;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 100dvh;
-    z-index: -10;
+  .footer {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    svg {
+      font-size: 3rem;
+      background-color: $color-green;
+      padding: 0.5rem;
+      border-radius: 100%;
+      color: $color-dark-purple;
+    }
+
+    & > :last-child {
+      flex: 1;
+    }
+    .line {
+      position: relative;
+      width: 1px;
+      height: 2rem;
+      background-color: white;
+    }
   }
 
   @media screen and (max-width: 650px) {

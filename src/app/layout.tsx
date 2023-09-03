@@ -19,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <UIContext>
-        {/* <Navigation /> */}
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+          <Navigation />
+          {children}
+        </body>
       </UIContext>
     </html>
   );
