@@ -11,9 +11,12 @@
   right: 0;
   padding: 0.5em 1em;
   color: white;
-
   z-index: 100;
   transition: all 0.5s;
+
+  @media screen and (max-width: 560px) {
+    display: none;
+  }
 
   &::after {
     content: "";

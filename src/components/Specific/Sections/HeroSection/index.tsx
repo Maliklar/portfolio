@@ -11,35 +11,37 @@ const HeroSection = () => {
 
   return (
     <section className={styles.container}>
-      <Reveal className={styles.content}>
-        <h1 className={styles.header}>Hello, {"I'm "}Malik.</h1>
+      <div className={styles.mainContent}>
+        <Reveal className={styles.content}>
+          <h1 className={styles.header}>Hello, {"I'm "}Malik.</h1>
 
-        <p className={styles.subtitle}>
-          I am a full stack web developer specialized in building and
-          maintaining beautiful and accessible websites using various
-          technologies.
-        </p>
+          <p className={styles.subtitle}>
+            I am a full stack web developer specialized in building and
+            maintaining beautiful and accessible websites using various
+            technologies.
+          </p>
 
-        <button className={styles.button} onClick={continueClickHandler}>
-          CHECKOUT MY WORK <FaChevronRight />{" "}
-        </button>
-      </Reveal>
-      <Reveal
-        direction="left"
-        role="img"
-        title="Malik Elbadri"
-        className={styles.imageOuterContainer}
-      >
-        <div className={styles.imageContainer}>
-          <Image
-            src={MyImage.src}
-            fill
-            style={{ objectFit: "cover" }}
-            alt="Malik Elbadri"
-            priority
-          />
-        </div>
-      </Reveal>
+          <button className={styles.button} onClick={continueClickHandler}>
+            CHECKOUT MY WORK <FaChevronRight />{" "}
+          </button>
+        </Reveal>
+        <Reveal
+          direction="left"
+          role="img"
+          title="Malik Elbadri"
+          className={styles.imageOuterContainer}
+        >
+          <div className={styles.imageContainer}>
+            <Image
+              src={MyImage.src}
+              fill
+              style={{ objectFit: "cover" }}
+              alt="Malik Elbadri"
+              priority
+            />
+          </div>
+        </Reveal>
+      </div>
       <div className={styles.footer}>
         <div className={styles.line} />
         <FaGithub />

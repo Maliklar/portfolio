@@ -5,19 +5,12 @@
   flex-direction: column;
   color: white;
   background-color: $color-black;
-
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: $white;
-    gap: 2rem;
-    padding: 1rem;
-    padding-top: 1.5rem;
-    & > * {
-      max-width: 1300px;
-    }
+  gap: 2rem;
+  & > * {
+    max-width: 1300px;
   }
+  padding: 1rem;
+
   .projectsSection {
     display: flex;
     flex-direction: column;
