@@ -4,6 +4,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  margin-top: 1rem;
   color: $white;
   .content {
     position: relative;
@@ -71,12 +72,14 @@
     }
   }
 
-  @media screen and (max-width: 880px) {
+  @media screen and (max-width: 670px) {
+    display: flex;
+    .content {
+      display: flex;
+      flex-direction: column;
+    }
+
     flex-direction: column;
     text-align: center;
-    .imageContainer {
-      flex: unset;
-      max-height: 40%;
-    }
   }
 }
