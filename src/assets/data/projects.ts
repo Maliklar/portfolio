@@ -35,9 +35,23 @@ const skills = {
     title: "NextJs",
     color: "White",
   },
-} as const;
+};
 
-const projects = [
+export type SkillType = {
+  title: string;
+  color: string;
+};
+
+export type ProjectType = {
+  title: string;
+  src: string;
+  description: string;
+  skills: SkillType[];
+  gitHub: string;
+  url: string;
+  state?: "active" | "top" | "bottom" | "inactive";
+};
+const projects: ProjectType[] = [
   {
     title: "IP Address Tracker",
     src: IPAddressTracker.src,

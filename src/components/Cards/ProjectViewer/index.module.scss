@@ -1,0 +1,100 @@
+@import "@/styles/variables.scss";
+
+.container {
+  position: relative;
+  min-width: 100%;
+  min-height: 100dvh;
+  height: calc(100vh);
+  margin: -1rem;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  gap: 1rem;
+
+  .slideContent {
+    position: relative;
+    flex: 1;
+    height: 100%;
+
+    .content {
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 1rem;
+      z-index: 10;
+    }
+  }
+  .sliderContainer {
+    z-index: 10;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    width: 50%;
+    margin-left: -25%;
+    height: 100%;
+
+    .card {
+      transition: all 1s;
+      position: absolute;
+
+      &[data-state="top"] {
+        transform: scale(0.5) rotate(-25deg) translate(-10%, -200%);
+        filter: blur(5px);
+      }
+      &[data-state="bottom"] {
+        transform: scale(0.5) rotate(25deg) translate(-10%, 200%);
+        filter: blur(5px);
+      }
+      &[data-state="active"] {
+        transform: scale(1) rotate(0deg) translate(0%, 0%);
+      }
+
+      &[data-state="inactive"] {
+        background-color: gray;
+        transform: translateX(-210%);
+      }
+    }
+  }
+
+  .backgroundContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.8;
+
+    .img {
+      transition: all 1s;
+
+      &[data-state="top"] {
+        transform: rotate(-25deg) translate(-10%, -200%);
+      }
+      &[data-state="bottom"] {
+        transform: rotate(25deg) translate(-10%, 200%);
+      }
+      &[data-state="active"] {
+        transform: rotate(0deg) translate(0%, 0%);
+      }
+
+      &[data-state="inactive"] {
+        transform: translateX(-210%);
+      }
+    }
+    .shadow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      box-shadow: inset 0px 0px 100px 100px $color-black;
+      backdrop-filter: blur(2px);
+      z-index: 1;
+    }
+  }
+}

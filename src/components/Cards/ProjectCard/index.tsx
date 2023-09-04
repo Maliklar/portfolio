@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AiFillGithub } from "react-icons/ai";
 import { PiArrowSquareOut } from "react-icons/pi";
 import Reveal from "@/components/Reveal";
+import React from "react";
 type Props = {
   title: string;
   src: string;
@@ -15,27 +16,22 @@ type Props = {
     title: string;
     color: string;
   }[];
-};
+  className?: string;
+  state?: "active" | "top" | "bottom" | "inactive";
+} & React.HtmlHTMLAttributes<HTMLDivElement>;
 const ProjectCard = ({
   title,
   src,
   skills,
   gitHub,
   url,
+
   description,
+  className = "",
+  ...props
 }: Props) => {
-  const directions = ["left", "right", "top", "bottom"];
   return (
-    <Reveal
-      direction={
-        directions[Math.floor(Math.random() * directions.length)] as
-          | "left"
-          | "right"
-          | "bottom"
-          | "top"
-      }
-      className={styles.projectCard}
-    >
+    <div className={`${styles.projectCard} ${className}`} {...props}>
       <strong className={styles.title}>{title}</strong>
       <div className={styles.imageContainer}>
         <Image src={src} fill alt={title} style={{ objectFit: "cover" }} />
@@ -61,7 +57,7 @@ const ProjectCard = ({
           )}
         </div>
       </div>
-    </Reveal>
+    </div>
   );
 };
 export default ProjectCard;
