@@ -18,11 +18,29 @@
 
     .content {
       position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      .title {
+        font-size: 5rem;
+        font-weight: 200;
+      }
+
+      .description {
+        font-size: 2rem;
+        font-weight: 200;
+      }
+
+      .techUsed {
+        display: flex;
+        flex-wrap: wrap;
+      }
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      padding: 1rem;
+      padding: 2rem;
       z-index: 10;
     }
   }

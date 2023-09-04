@@ -8,56 +8,7 @@
   background-color: $color-black;
   gap: 2rem;
   & > * {
-    max-width: 1300px;
+    max-width: 1400px;
   }
   padding: 1rem;
-  .projectsSection {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    h2 {
-      font-size: 3rem;
-      font-weight: 300;
-    }
-
-    .filters {
-      display: flex;
-      gap: 1rem;
-      align-self: center;
-
-      border: 1px solid white;
-
-      span {
-        padding: 0.5rem;
-        padding-top: 0.6rem;
-        overflow: hidden;
-        cursor: pointer;
-        z-index: 1;
-        &::after {
-          content: "";
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          background-color: white;
-          transition: all 0.3s;
-          transform: translateX(-105%);
-          z-index: -1;
-        }
-        &[data-state="true"] {
-          color: black;
-          &::after {
-            transform: translateX(0%);
-          }
-        }
-      }
-    }
-    .content {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-  }
 }

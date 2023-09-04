@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./index.module.scss";
 import initialProjects from "@/assets/data/projects";
 import ProjectCard from "../ProjectCard";
 import Image from "next/image";
+import SkillCircle from "@/components/Specific/SkillCircle";
+import { FaReact } from "react-icons/fa";
 
 initialProjects.forEach((p, i) => {
   p.state = "inactive";
@@ -13,12 +15,41 @@ initialProjects.forEach((p, i) => {
 const ProjectViewer = () => {
   const [projects, setProjects] = useState(initialProjects);
   const [activeProject, setActiveProject] = useState(initialProjects[0]);
+  const sectionRef = useRef<HTMLDivElement>(null);
   //   useEffect(() => {
   //     const active = projects.find((p) => p.state === "active");
   //     if (active) setActiveProject(active);
   //   }, [projects]);
 
   const [animation, setAnimation] = useState("stop");
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !sectionRef.current) return;
+
+    function wheelHandler(e: WheelEvent) {
+      if (!sectionRef.current) return;
+      const { top, bottom } = sectionRef.current.getBoundingClientRect();
+
+      const isCompletelyVisible = Math.abs(bottom - innerHeight) <= 1;
+
+      if (isCompletelyVisible)
+        if (e.deltaY >= 125) {
+          bottomHandler();
+        } else {
+          if (activeProject === projects[0]) return;
+          e.preventDefault();
+          e.stopPropagation();
+          topHandler();
+        }
+    }
+
+    addEventListener("wheel", wheelHandler, { passive: false });
+
+    return () => {
+      removeEventListener("wheel", wheelHandler);
+    };
+  }, [activeProject]);
+
   const bottomHandler = () => {
     setAnimation("bottom");
 
@@ -41,8 +72,30 @@ const ProjectViewer = () => {
 
     setProjects([...projects]);
   };
+  const topHandler = () => {
+    setAnimation("bottom");
+
+    let activeIndex = projects.findIndex((p) => p.state === "active") - 1;
+    if (activeIndex < 0) {
+      activeIndex = projects.length - 1;
+    }
+    setActiveProject(projects[activeIndex]);
+
+    projects.forEach((p, i) => {
+      p.state = "inactive";
+      if (i === activeIndex - 1) {
+        p.state = "top";
+      }
+      if (i === activeIndex + 1) {
+        p.state = "bottom";
+      }
+      if (i === activeIndex) p.state = "active";
+    });
+
+    setProjects([...projects]);
+  };
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={sectionRef}>
       <div className={styles.sliderContainer} data-animation={animation}>
         {projects.map((p) => {
           return (
@@ -60,7 +113,20 @@ const ProjectViewer = () => {
         {activeProject && (
           <>
             <section className={styles.content}>
-              <h3>{activeProject.title}</h3>
+              <h3 className={styles.title}>{activeProject.title}</h3>
+              <p className={styles.description}>{activeProject.description}</p>
+              <ul className={styles.techUsed}>
+                <SkillCircle
+                  title="React Native"
+                  src={FaReact}
+                  color="red"
+                  shown
+                />
+                <SkillCircle title="React Native" src={FaReact} />
+                <SkillCircle title="React Native" src={FaReact} />
+                <SkillCircle title="React Native" src={FaReact} />
+              </ul>
+
               <button onClick={bottomHandler}>CLICK ME</button>
             </section>
           </>

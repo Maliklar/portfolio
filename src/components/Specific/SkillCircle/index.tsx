@@ -4,8 +4,8 @@ import { IconType } from "react-icons";
 type Props = {
   src: IconType;
   title: string;
-  shown: boolean;
-  color: string;
+  shown?: boolean;
+  color?: string;
 };
 const SkillCircle = ({ src: Icon, title, shown }: Props) => {
   return (
