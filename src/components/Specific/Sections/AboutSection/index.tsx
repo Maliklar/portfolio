@@ -12,10 +12,7 @@ const AboutSection = () => {
         <h2>About Me</h2>
 
         <div className={styles.content}>
-          <Reveal
-            direction={"right"}
-            className={`${styles.card} ${styles.web}`}
-          >
+          <div className={`${styles.card} ${styles.web}`}>
             <h3>
               {" "}
               <FaChrome /> Web Developer
@@ -27,11 +24,8 @@ const AboutSection = () => {
               ReactJs, Redux, NextJs, VueJs and others.
               <br />
             </p>
-          </Reveal>
-          <Reveal
-            direction={"left"}
-            className={`${styles.card} ${styles.mobile}`}
-          >
+          </div>
+          <div className={`${styles.card} ${styles.mobile}`}>
             <h3>
               {" "}
               <FaMobile /> Mobile Developer
@@ -42,11 +36,8 @@ const AboutSection = () => {
               cross-platform framework and working may way to build a real
               mobile applications with advanced features.
             </p>
-          </Reveal>
-          <Reveal
-            direction={"bottom"}
-            className={`${styles.card} ${styles.human}`}
-          >
+          </div>
+          <div className={`${styles.card} ${styles.human}`}>
             <h3>
               {" "}
               <FaBook /> Learner
@@ -57,13 +48,12 @@ const AboutSection = () => {
               open to learn new technologies and techniques that help improve
               the general development experience for me and my team as well.
             </p>
-          </Reveal>
-          <Reveal direction={"top"} className={`${styles.card} ${styles.cv}`}>
+          </div>
+          <div className={`${styles.card} ${styles.cv}`}>
             <h3>
-              {" "}
               <AiOutlineDownload /> Download My CV
             </h3>
-          </Reveal>
+          </div>
         </div>
       </div>
     </section>

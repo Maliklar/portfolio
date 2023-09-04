@@ -239,23 +239,24 @@ const SkillsSection = () => {
         {skills.map((skill) => {
           const directions = ["top", "right", "left", "bottom"];
           return (
-            <Reveal
+            // <div
+
+            // //   direction={
+            // //     directions[Math.floor(Math.random() * directions.length)] as
+            // //       | "left"
+            // //       | "right"
+            // //       | "bottom"
+            // //       | "top"
+            // //   }
+            // >
+            <SkillCircle
               key={skill.title}
-              direction={
-                directions[Math.floor(Math.random() * directions.length)] as
-                  | "left"
-                  | "right"
-                  | "bottom"
-                  | "top"
-              }
-            >
-              <SkillCircle
-                color="white"
-                src={skill.img}
-                title={skill.title}
-                shown={skill.shown}
-              />
-            </Reveal>
+              color="white"
+              src={skill.img}
+              title={skill.title}
+              shown={skill.shown}
+            />
+            // </div>
           );
         })}
       </ul>
