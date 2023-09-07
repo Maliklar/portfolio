@@ -21,7 +21,21 @@ const ProjectCard = ({
 }: Props) => {
   return (
     <div className={`${styles.projectCard} ${className}`} {...props}>
-      <strong className={styles.title}>{title}</strong>
+      <div className={styles.header}>
+        <strong className={styles.title}>{title}</strong>
+        <div className={styles.footer}>
+          {gitHub && (
+            <Link className={styles.gitHub} href={gitHub}>
+              GitHub <AiFillGithub />
+            </Link>
+          )}
+          {url && (
+            <Link className={styles.url} href={url}>
+              Preview <PiArrowSquareOut />
+            </Link>
+          )}
+        </div>
+      </div>
       <div className={styles.tagsContainer}>
         {skills.map(({ title, Icon }) => (
           <SkillTag Icon={Icon} key={title} title={title} />
@@ -29,18 +43,6 @@ const ProjectCard = ({
       </div>
       <p>{description}</p>
 
-      <div className={styles.footer}>
-        {gitHub && (
-          <Link className={styles.gitHub} href={gitHub}>
-            GitHub <AiFillGithub fontSize="1rem" />
-          </Link>
-        )}
-        {url && (
-          <Link className={styles.url} href={url}>
-            Preview <PiArrowSquareOut fontSize="1rem" />
-          </Link>
-        )}
-      </div>
       <div className={styles.imagesContainer}>
         <div className={styles.imageContainer}>
           <Image
