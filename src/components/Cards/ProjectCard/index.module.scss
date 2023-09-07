@@ -5,11 +5,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 0px;
-  max-height: 360px;
-  min-width: 260px;
-  max-width: 260px;
-  height: 400px;
+  // min-height: 360px;
+  // max-height: 360px;
+  // min-width: 260px;
+  // max-width: 260px;
+  // height: 400px;
 
   &:hover {
     .imageContainer {
@@ -17,9 +17,9 @@
     }
   }
   .title {
-    font-size: 1.5rem;
+    font-size: 4rem;
     font-weight: 500;
-    background-color: $color-light-purple;
+    // background-color: $color-prussian-blue;
     padding: 1rem;
     width: 96%;
     border-top-left-radius: 8px;
@@ -45,7 +45,7 @@
     border-bottom-left-radius: 8px;
 
     width: 96%;
-    background-color: $color-light-purple;
+    // background-color: $color-light-purple;
     padding: 1rem;
 
     .tagsContainer {

@@ -82,7 +82,7 @@ const ProjectViewer = () => {
         </div>
 
         <div className={styles.slideContent}>
-          {activeProject && (
+          {/* {activeProject && (
             <section className={styles.content}>
               <h3 className={styles.title}>{activeProject.title}</h3>
               <p className={styles.description}>{activeProject.description}</p>
@@ -94,7 +94,7 @@ const ProjectViewer = () => {
                 ))}
               </div>
             </section>
-          )}
+          )} */}
           <div className={styles.sliderProgress}>
             {projects.map((i, index) => (
               <div
