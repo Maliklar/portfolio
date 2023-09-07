@@ -6,26 +6,14 @@ import { AiFillGithub } from "react-icons/ai";
 import { PiArrowSquareOut } from "react-icons/pi";
 import Reveal from "@/components/Reveal";
 import React from "react";
-type Props = {
-  title: string;
-  src: string;
-  description: string;
-  url?: string;
-  gitHub?: string;
-  skills: {
-    title: string;
-    color: string;
-  }[];
-  className?: string;
-  state?: "active" | "top" | "bottom" | "inactive";
-} & React.HtmlHTMLAttributes<HTMLDivElement>;
+import { ProjectType } from "@/assets/data/projects2";
+type Props = ProjectType & React.HtmlHTMLAttributes<HTMLDivElement>;
 const ProjectCard = ({
   title,
-  src,
+  image,
   skills,
   gitHub,
   url,
-
   description,
   className = "",
   ...props
@@ -34,13 +22,13 @@ const ProjectCard = ({
     <div className={`${styles.projectCard} ${className}`} {...props}>
       <strong className={styles.title}>{title}</strong>
       <div className={styles.imageContainer}>
-        <Image src={src} fill alt={title} style={{ objectFit: "cover" }} />
+        <Image src={image} fill alt={title} style={{ objectFit: "cover" }} />
       </div>
 
       <div className={styles.content}>
         <div className={styles.tagsContainer}>
-          {skills.map(({ title, color }) => (
-            <SkillTag key={title} title={title} color={color} />
+          {skills.map(({ title }) => (
+            <SkillTag key={title} title={title} />
           ))}
         </div>
 

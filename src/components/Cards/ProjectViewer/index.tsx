@@ -1,11 +1,10 @@
 import { UIEvent, useEffect, useRef, useState } from "react";
 import styles from "./index.module.scss";
-import initialProjects from "@/assets/data/projects";
+import initialProjects, { ProjectType } from "@/assets/data/projects2";
 import ProjectCard from "../ProjectCard";
 import Image from "next/image";
 import SkillCircle from "@/components/Specific/SkillCircle";
 import { FaReact } from "react-icons/fa";
-
 initialProjects.forEach((p, i) => {
   p.state = "inactive";
   if (i === 0) p.state = "active";
@@ -39,6 +38,7 @@ const ProjectViewer = () => {
           if (i === activeIndex + 1) p.state = "bottom";
           if (i === activeIndex) p.state = "active";
         });
+        setProjects([...projects]);
       }
     }
 
@@ -49,6 +49,15 @@ const ProjectViewer = () => {
     };
   }, [activeProject]);
 
+  const moveToSlide = (index: number) => {
+    if (!sectionRef.current) return;
+    const rec = sectionRef.current.getBoundingClientRect();
+
+    scrollTo({
+      top:
+        Math.abs(rec.y + scrollY) + index * innerHeight + (index === 0 ? 1 : 0),
+    });
+  };
   return (
     <div
       ref={sectionRef}
@@ -74,27 +83,30 @@ const ProjectViewer = () => {
 
         <div className={styles.slideContent}>
           {activeProject && (
-            <>
-              <section className={styles.content}>
-                <h3 className={styles.title}>{activeProject.title}</h3>
-                <p className={styles.description}>
-                  {activeProject.description}
-                </p>
-                <ul className={styles.techUsed}>
-                  <SkillCircle
-                    title="React Native"
-                    src={FaReact}
-                    color="red"
-                    shown
-                  />
-                  <SkillCircle title="React Native" src={FaReact} />
-                  <SkillCircle title="React Native" src={FaReact} />
-                  <SkillCircle title="React Native" src={FaReact} />
-                </ul>
-              </section>
-            </>
+            <section className={styles.content}>
+              <h3 className={styles.title}>{activeProject.title}</h3>
+              <p className={styles.description}>{activeProject.description}</p>
+              <div className={styles.skillsContainer}>
+                {activeProject.skills.map(({ title, Icon }) => (
+                  <div className={styles.skillIcon} title={title} key={title}>
+                    <Icon />
+                  </div>
+                ))}
+              </div>
+            </section>
           )}
+          <div className={styles.sliderProgress}>
+            {projects.map((i, index) => (
+              <div
+                key={i.title}
+                data-active={i.state === "active"}
+                onClick={() => moveToSlide(index)}
+                className={styles.dot}
+              ></div>
+            ))}
+          </div>
         </div>
+
         <div className={styles.backgroundContainer}>
           <div className={styles.shadow} />
           {projects.map((p) => (
@@ -102,7 +114,7 @@ const ProjectViewer = () => {
               className={styles.img}
               data-state={p.state}
               key={p.title}
-              src={p.src}
+              src={p.image}
               alt={p.title}
               fill
               style={{ objectFit: "cover" }}

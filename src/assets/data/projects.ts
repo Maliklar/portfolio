@@ -51,6 +51,17 @@ export type ProjectType = {
   url: string;
   state?: "active" | "top" | "bottom" | "inactive";
 };
+
+const project = {
+  title: "S",
+  description: "",
+  skills: [],
+  image: "",
+  images: ["", ""],
+  gitHub: "",
+  url: "",
+  store: "",
+};
 const projects: ProjectType[] = [
   {
     title: "IP Address Tracker",
