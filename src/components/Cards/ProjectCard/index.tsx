@@ -13,6 +13,7 @@ const ProjectCard = ({
   image,
   skills,
   gitHub,
+  images,
   url,
   description,
   className = "",
@@ -21,28 +22,41 @@ const ProjectCard = ({
   return (
     <div className={`${styles.projectCard} ${className}`} {...props}>
       <strong className={styles.title}>{title}</strong>
-      <div className={styles.imageContainer}>
-        <Image src={image} fill alt={title} style={{ objectFit: "cover" }} />
+      <div className={styles.tagsContainer}>
+        {skills.map(({ title, Icon }) => (
+          <SkillTag Icon={Icon} key={title} title={title} />
+        ))}
       </div>
+      <p>{description}</p>
 
-      <div className={styles.content}>
-        <div className={styles.tagsContainer}>
-          {skills.map(({ title }) => (
-            <SkillTag key={title} title={title} />
-          ))}
+      <div className={styles.footer}>
+        {gitHub && (
+          <Link className={styles.gitHub} href={gitHub}>
+            GitHub <AiFillGithub fontSize="1rem" />
+          </Link>
+        )}
+        {url && (
+          <Link className={styles.url} href={url}>
+            Preview <PiArrowSquareOut fontSize="1rem" />
+          </Link>
+        )}
+      </div>
+      <div className={styles.imagesContainer}>
+        <div className={styles.imageContainer}>
+          <Image
+            src={images.main}
+            fill
+            alt={title}
+            style={{ objectFit: "contain" }}
+          />
         </div>
-
-        <div className={styles.footer}>
-          {gitHub && (
-            <Link className={styles.gitHub} href={gitHub}>
-              GitHub <AiFillGithub fontSize="1rem" />
-            </Link>
-          )}
-          {url && (
-            <Link className={styles.url} href={url}>
-              Preview <PiArrowSquareOut fontSize="1rem" />
-            </Link>
-          )}
+        <div className={styles.imageContainer}>
+          <Image
+            src={images.mobile}
+            fill
+            alt={title}
+            style={{ objectFit: "contain" }}
+          />
         </div>
       </div>
     </div>

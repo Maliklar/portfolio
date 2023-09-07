@@ -107,7 +107,7 @@ const ProjectViewer = () => {
           </div>
         </div>
 
-        <div className={styles.backgroundContainer}>
+        {/* <div className={styles.backgroundContainer}>
           <div className={styles.shadow} />
           {projects.map((p) => (
             <Image
@@ -120,7 +120,7 @@ const ProjectViewer = () => {
               style={{ objectFit: "cover" }}
             />
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -1,19 +1,22 @@
+import { IconType } from "react-icons";
 import styles from "./index.module.scss";
 type Props = {
   title: string;
   color?: string;
+  Icon: IconType;
 };
-const SkillTag = ({ title, color = "lightgreen" }: Props) => {
+const SkillTag = ({ title, color = "lightgreen", Icon }: Props) => {
   return (
-    <small
+    <strong
       className={styles.tag}
       style={{
         color: color,
         border: `1px solid ${color}`,
       }}
     >
+      <Icon />
       {title}
-    </small>
+    </strong>
   );
 };
 
