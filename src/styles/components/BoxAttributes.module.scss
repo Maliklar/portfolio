@@ -2,7 +2,7 @@
 
 .boxAttributes {
   &[data-theme="dark"] {
-    color: white;
+    color: color-amber-500;
     &:hover {
       background-color: $dark-theme-background-hover;
     }
@@ -16,31 +16,31 @@
 
   &[color="primary"] {
     background-color: $color-primary;
-    color: white;
+    color: color-amber-500;
   }
   &[color="secondary"] {
     background-color: $color-secondary;
-    color: white;
+    color: color-amber-500;
   }
   &[color="success"] {
     background-color: $color-success;
-    color: white;
+    color: color-amber-500;
   }
   &[color="error"] {
     background-color: $color-error;
-    color: white;
+    color: color-amber-500;
   }
   &[color="warning"] {
     background-color: $color-warning;
-    color: white;
+    color: color-amber-500;
   }
   &[data-shadow="true"] {
     box-shadow: $shadow-strong;
-    color: white;
+    color: color-amber-500;
   }
   &[data-outlined="true"] {
     border: $color-default-light-1 solid 1px;
-    color: white;
+    color: color-amber-500;
   }
 
   border-radius: $border-radius;

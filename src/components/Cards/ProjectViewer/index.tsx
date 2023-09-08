@@ -82,19 +82,6 @@ const ProjectViewer = () => {
         </div>
 
         <div className={styles.slideContent}>
-          {/* {activeProject && (
-            <section className={styles.content}>
-              <h3 className={styles.title}>{activeProject.title}</h3>
-              <p className={styles.description}>{activeProject.description}</p>
-              <div className={styles.skillsContainer}>
-                {activeProject.skills.map(({ title, Icon }) => (
-                  <div className={styles.skillIcon} title={title} key={title}>
-                    <Icon />
-                  </div>
-                ))}
-              </div>
-            </section>
-          )} */}
           <div className={styles.sliderProgress}>
             {projects.map((i, index) => (
               <div
@@ -102,25 +89,10 @@ const ProjectViewer = () => {
                 data-active={i.state === "active"}
                 onClick={() => moveToSlide(index)}
                 className={styles.dot}
-              ></div>
+              />
             ))}
           </div>
         </div>
-
-        {/* <div className={styles.backgroundContainer}>
-          <div className={styles.shadow} />
-          {projects.map((p) => (
-            <Image
-              className={styles.img}
-              data-state={p.state}
-              key={p.title}
-              src={p.image}
-              alt={p.title}
-              fill
-              style={{ objectFit: "cover" }}
-            />
-          ))}
-        </div> */}
       </div>
     </div>
   );

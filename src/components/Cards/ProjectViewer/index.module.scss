@@ -52,7 +52,7 @@
           border-radius: 100%;
           transition: opacity 0.5s;
           opacity: 0.3;
-          background-color: white;
+          background-color: color-amber-500;
           cursor: pointer;
 
           &[data-active="true"] {
@@ -92,10 +92,10 @@
             max-height: 3rem;
             max-width: 3rem;
             border-radius: 100%;
-            background-color: $color-columbia-blue;
+            background-color: $color-amber-500;
             color: black;
             font-size: 1.5rem;
-            box-shadow: 0px 0px 5px $color-dark-purple;
+            box-shadow: 0px 0px 5px $color-amber-500;
           }
         }
         top: 0;
@@ -177,7 +177,7 @@
         right: 0;
         bottom: 0;
         background-color: rgba(0, 0, 0, 0.5);
-        box-shadow: inset 0px 0px 100px 100px $color-black;
+        box-shadow: inset 0px 0px 100px 100px $color-amber-500;
         backdrop-filter: blur(2px);
         z-index: 1;
       }

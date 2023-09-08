@@ -8,7 +8,7 @@
 
   &[data-theme="dark"] {
     .inputContainer {
-      color: $white;
+      color: $color-amber-500;
       background-color: $dark-theme-input-background;
       &:hover {
         background-color: $dark-theme-input-background-hover;

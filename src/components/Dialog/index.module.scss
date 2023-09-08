@@ -14,7 +14,7 @@
   border-radius: $border-radius;
   box-shadow: $shadow-normal;
   background-color: $color-default-dark;
-  color: white;
+  color: color-amber-500;
   overflow: hidden;
   max-width: 600px;
   &[data-size="large"] {
@@ -61,11 +61,11 @@
       background: linear-gradient(
         to left,
         $color-primary,
-        white,
+        color-amber-500,
         $color-success,
-        white,
+        color-amber-500,
         $color-primary,
-        white
+        color-amber-500
       );
       height: 2px;
       width: 300%;

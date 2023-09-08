@@ -17,7 +17,12 @@
       content: "";
       height: 1px;
       display: block;
-      background: linear-gradient(90deg, $color-black, white, $color-black);
+      background: linear-gradient(
+        90deg,
+        $color-amber-500,
+        color-amber-500,
+        $color-amber-500
+      );
       width: 50%;
     }
   }
@@ -27,7 +32,7 @@
     gap: 1rem;
     align-self: center;
 
-    border: 1px solid white;
+    border: 1px solid color-amber-500;
 
     span {
       padding: 0.5rem;
@@ -42,7 +47,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background-color: white;
+        background-color: color-amber-500;
         transition: all 0.3s;
         transform: translateX(-105%);
         z-index: -1;

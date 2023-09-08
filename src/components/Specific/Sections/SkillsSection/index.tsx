@@ -91,7 +91,7 @@ const initialSkills: InitialSkillsType[] = [
     title: "NextJs",
     category: SkillCategory.Framework,
     shown: true,
-    color: "white",
+    color: "color-amber-500",
   },
   {
     img: BiLogoReact,
@@ -251,7 +251,7 @@ const SkillsSection = () => {
             // >
             <SkillCircle
               key={skill.title}
-              color="white"
+              color="color-amber-500"
               src={skill.img}
               title={skill.title}
               shown={skill.shown}

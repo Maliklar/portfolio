@@ -1,0 +1,31 @@
+@import "@/styles/variables.scss";
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    font-size: 3em;
+    font-weight: thin;
+
+    &::after {
+      content: "";
+      height: 2px;
+      border-radius: 3px;
+      display: block;
+      background: linear-gradient(
+        90deg,
+        $color-purple-500,
+        $color-purple-50,
+        transparent
+      );
+      width: 100%;
+    }
+  }
+}

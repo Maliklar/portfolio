@@ -20,9 +20,9 @@ const ProjectCard = ({
   ...props
 }: Props) => {
   return (
-    <div className={`${styles.projectCard} ${className}`} {...props}>
+    <section className={`${styles.projectCard} ${className}`} {...props}>
       <div className={styles.header}>
-        <strong className={styles.title}>{title}</strong>
+        <h3 className={styles.title}>{title}</h3>
         <div className={styles.footer}>
           {gitHub && (
             <Link className={styles.gitHub} href={gitHub}>
@@ -61,7 +61,7 @@ const ProjectCard = ({
           />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default ProjectCard;

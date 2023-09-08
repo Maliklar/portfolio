@@ -17,7 +17,6 @@ const Navigation = () => {
       document.removeEventListener("scroll", scrollHandler);
     };
   }, []);
-  return null;
   return (
     <header className={styles.header} data-hidden={hidden}>
       <nav className={styles.nav}>

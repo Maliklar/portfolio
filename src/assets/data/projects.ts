@@ -33,7 +33,7 @@ const skills = {
   },
   NextJs: {
     title: "NextJs",
-    color: "White",
+    color: "color-amber-500",
   },
 };
 

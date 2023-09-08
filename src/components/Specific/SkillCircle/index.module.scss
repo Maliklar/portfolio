@@ -6,8 +6,8 @@
   align-items: center;
   padding: 0.3rem;
 
-  // background-color: $color-green;
-  // color: $color-dark-purple;
+  // background-color: $color-amber-500;
+  // color: $color-amber-500;
   border-radius: 8px;
 
   transition: all 0.3s;
@@ -23,18 +23,18 @@
     min-height: 4rem;
     min-width: 4rem;
     border-radius: 100%;
-    background-color: $color-bice-blue;
+    background-color: $color-blue-500;
     color: white;
     z-index: 1;
-    box-shadow: 0px 0px 8px $color-dark-purple;
+    box-shadow: 0px 0px 8px black;
   }
 
   strong {
     flex: 1;
     font-size: 1.2rem;
     font-weight: 400;
-    background-color: $color-columbia-blue;
-    color: black;
+    background-color: $color-bluegray-900;
+    color: white;
     padding: 0.7rem;
     padding-top: 0.9rem;
     padding-inline-start: 3.2rem;
