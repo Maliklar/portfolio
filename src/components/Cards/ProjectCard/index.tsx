@@ -11,10 +11,10 @@ type Props = { scrollPercent: number } & ProjectType &
   React.HtmlHTMLAttributes<HTMLDivElement>;
 const ProjectCard = ({
   title,
-  image,
+  desktop,
   skills,
   gitHub,
-  images,
+  mobile,
   url,
   scrollPercent,
   description,
@@ -26,7 +26,7 @@ const ProjectCard = ({
       <div className={styles.imagesContainer}>
         <div className={styles.imageContainer}>
           <Image
-            src={images.main}
+            src={desktop}
             fill
             alt={title}
             style={{ objectFit: "contain" }}
@@ -38,7 +38,7 @@ const ProjectCard = ({
             }}
           >
             <Image
-              src={images.mobile}
+              src={mobile}
               fill
               alt={title}
               style={{ objectFit: "contain" }}
