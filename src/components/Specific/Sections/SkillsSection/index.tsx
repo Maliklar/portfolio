@@ -41,6 +41,7 @@ import {
 import { SiPrisma, SiWebrtc } from "react-icons/si";
 
 import { TbBrandSolidjs, TbBrandNextjs, TbBrandSvelte } from "react-icons/tb";
+import Section from "..";
 
 enum SkillCategory {
   Language,
@@ -206,35 +207,7 @@ const SkillsSection = () => {
     setSkills([...skills]);
   };
   return (
-    <section className={styles.skillsSection}>
-      <h2>Skills</h2>
-      {/* <div className={styles.filters}>
-        <span
-          onClick={() => filterChangeHandler()}
-          data-active={currentFilter === undefined}
-        >
-          All
-        </span>
-        <span
-          onClick={() => filterChangeHandler(SkillCategory.Framework)}
-          data-active={currentFilter === SkillCategory.Framework}
-        >
-          Frameworks
-        </span>
-        <span
-          onClick={() => filterChangeHandler(SkillCategory.Language)}
-          data-active={currentFilter === SkillCategory.Language}
-        >
-          Languages
-        </span>
-        <span
-          onClick={() => filterChangeHandler(SkillCategory.Tool)}
-          data-active={currentFilter === SkillCategory.Tool}
-        >
-          Tools
-        </span>
-      </div> */}
-
+    <Section title="Skills">
       <ul className={styles.skillsContainer}>
         {skills.map((skill) => {
           const directions = ["top", "right", "left", "bottom"];
@@ -260,7 +233,7 @@ const SkillsSection = () => {
           );
         })}
       </ul>
-    </section>
+    </Section>
   );
 };
 export default SkillsSection;

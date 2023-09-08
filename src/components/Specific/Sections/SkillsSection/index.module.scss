@@ -1,81 +1,45 @@
 @import "@/styles/variables.scss";
 
-.skillsSection {
-  position: relative;
+.filters {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-
-  h2 {
-    font-size: 3rem;
-    font-weight: 200;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+  align-self: center;
+  border: 1px solid color-amber-500;
+  & > span {
+    position: relative;
+    padding: 0.7rem;
+    z-index: 1;
+    overflow: hidden;
+    cursor: pointer;
     &::after {
       content: "";
-      height: 1px;
-      display: block;
-      background: linear-gradient(
-        90deg,
-        $color-amber-500,
-        color-amber-500,
-        $color-amber-500
-      );
-      width: 50%;
+      position: absolute;
+      background-color: color-amber-500;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transition: transform 0.3s;
+      z-index: -1;
+      transform: translateX(-102%);
     }
-  }
-  .filters {
-    display: flex;
-    align-self: center;
-    border: 1px solid color-amber-500;
-    & > span {
-      position: relative;
-      padding: 0.7rem;
-      z-index: 1;
-      overflow: hidden;
-      cursor: pointer;
+
+    &[data-active="true"] {
+      color: black;
       &::after {
-        content: "";
-        position: absolute;
-        background-color: color-amber-500;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        transition: transform 0.3s;
-        z-index: -1;
-        transform: translateX(-102%);
-      }
-
-      &[data-active="true"] {
-        color: black;
-        &::after {
-          transform: translateX(0%);
-        }
+        transform: translateX(0%);
       }
     }
   }
-  .skillsContainer {
-    display: flex;
-    justify-content: center;
-    padding: 0px;
-    flex-wrap: wrap;
-    width: 100%;
-    gap: 1rem;
-    transition: all 0.5s;
-    & > * {
-    }
-  }
+}
+.skillsContainer {
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1rem;
 
-  @media screen and (max-width: 880px) {
-    flex-direction: column;
-    .imageContainer {
-      flex: unset;
-      min-height: 50%;
-    }
-    text-align: center;
+  transition: all 0.5s;
+  & > * {
   }
 }

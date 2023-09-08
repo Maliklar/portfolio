@@ -1,13 +1,17 @@
+@import "@/styles/variables.scss";
 .tag {
   position: relative;
   display: flex;
   gap: 0.5rem;
   align-items: center;
   width: min-content;
-  padding: 0.4rem;
-  padding-top: 0.5rem;
+  padding: 0.4em;
+  padding-inline: 0.8em;
   border-radius: 8px;
   overflow: hidden;
   z-index: 10;
   font-size: 1.2rem;
+
+  background-color: $color-purple-500;
+  color: white;
 }

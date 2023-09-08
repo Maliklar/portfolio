@@ -16,6 +16,8 @@ const ProjectViewer = () => {
   const [activeProject, setActiveProject] = useState(initialProjects[0]);
   const sectionRef = useRef<HTMLDivElement>(null);
 
+  const [scrollPercent, setScrollPercent] = useState(0);
+
   useEffect(() => {
     function scrollHandler() {
       if (!sectionRef.current) return;
@@ -26,9 +28,17 @@ const ProjectViewer = () => {
       const elementsHeight = innerHeight * projects.length;
       const currentScroll = Math.abs(top) + innerHeight;
       if (currentScroll > elementsHeight) return;
+
       const activeIndex =
         Math.round((currentScroll / elementsHeight) * projects.length) - 1;
+      console.log(
+        Math.round((currentScroll / elementsHeight) * projects.length) * 100
+      );
 
+      setScrollPercent(
+        Math.round((currentScroll / elementsHeight) * projects.length * 100) /
+          activeIndex
+      );
       const newActiveProject = projects[activeIndex];
       if (activeProject && newActiveProject !== activeProject) {
         setActiveProject(newActiveProject);
@@ -47,7 +57,7 @@ const ProjectViewer = () => {
     return () => {
       removeEventListener("scroll", scrollHandler);
     };
-  }, [activeProject]);
+  }, [activeProject, projects]);
 
   const moveToSlide = (index: number) => {
     if (!sectionRef.current) return;
@@ -72,6 +82,7 @@ const ProjectViewer = () => {
           {projects.map((p) => {
             return (
               <ProjectCard
+                scrollPercent={scrollPercent}
                 key={p.title}
                 {...p}
                 className={styles.card}
@@ -89,7 +100,7 @@ const ProjectViewer = () => {
                 data-active={i.state === "active"}
                 onClick={() => moveToSlide(index)}
                 className={styles.dot}
-              />
+              ></div>
             ))}
           </div>
         </div>

@@ -1,69 +1,97 @@
 @import "@/styles/variables.scss";
 
-.projectsSection {
+.container {
   position: relative;
-  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
-  h2 {
-    font-size: 3rem;
-    font-weight: 300;
+  .projectContainer {
+    max-height: 500px;
+    height: 500px;
+    max-width: 340px;
+    width: 340px;
+
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
-    &::after {
-      content: "";
-      height: 1px;
-      display: block;
-      background: linear-gradient(
-        90deg,
-        $color-amber-500,
-        color-amber-500,
-        $color-amber-500
-      );
-      width: 50%;
-    }
-  }
+    position: relative;
 
-  .filters {
-    display: flex;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.288);
+
     gap: 1rem;
-    align-self: center;
 
-    border: 1px solid color-amber-500;
+    .imagesContainer {
+      position: relative;
+      flex: 2;
+      height: 100%;
+      width: 100%;
 
-    span {
-      padding: 0.5rem;
-      padding-top: 0.6rem;
-      overflow: hidden;
-      cursor: pointer;
-      z-index: 1;
-      &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: color-amber-500;
-        transition: all 0.3s;
-        transform: translateX(-105%);
-        z-index: -1;
-      }
-      &[data-state="true"] {
-        color: black;
-        &::after {
-          transform: translateX(0%);
+      .desktop {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        .mobile {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          justify-content: flex-end;
+          padding-block: 2rem;
+          right: 0;
+          bottom: 0;
+          height: 80%;
+          width: 30%;
         }
       }
     }
-  }
-  .content {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
+
+    h3 {
+      font-size: 2em;
+    }
+
+    p {
+      font-size: 1em;
+      font-weight: thin;
+    }
+
+    .skillsContainer {
+      display: flex;
+      gap: 1rem;
+
+      .skill {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        background-color: $color-purple-500;
+        border-radius: 100%;
+        height: 2rem;
+        width: 2rem;
+        font-size: 1rem;
+        color: white;
+      }
+    }
+
+    .links {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      justify-content: flex-end;
+      width: 100%;
+      .link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1em;
+        background-color: $color-purple-500;
+        padding: 0.5em 1em;
+        border-radius: 8px;
+        color: white;
+        text-decoration: none;
+      }
+    }
   }
 }

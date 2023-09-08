@@ -7,15 +7,9 @@ type Props = {
 };
 const SkillTag = ({ title, color = "lightgreen", Icon }: Props) => {
   return (
-    <strong
-      className={styles.tag}
-      style={{
-        color: color,
-        border: `1px solid ${color}`,
-      }}
-    >
-      <Icon />
+    <strong className={styles.tag}>
       {title}
+      <Icon />
     </strong>
   );
 };
