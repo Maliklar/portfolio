@@ -1,6 +1,6 @@
 import { UIEvent, useEffect, useRef, useState } from "react";
 import styles from "./index.module.scss";
-import initialProjects, { ProjectType } from "@/assets/data/projects2";
+import initialProjects, { ProjectType } from "@/assets/data/projects";
 import ProjectCard from "../ProjectCard";
 import Image from "next/image";
 import SkillCircle from "@/components/Specific/SkillCircle";

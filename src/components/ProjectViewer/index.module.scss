@@ -1,0 +1,96 @@
+@import "@/styles/variables.scss";
+.container {
+  display: flex;
+  gap: 2rem;
+  height: 60vh;
+
+  .start {
+    flex: 1;
+    align-self: center;
+    gap: 1em;
+    display: flex;
+    flex-direction: column;
+    h3 {
+      font-size: 2em;
+    }
+    p {
+      line-height: 1.5em;
+    }
+
+    .skills {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 1rem;
+      margin-top: 2rem;
+
+      .gitHub,
+      .url {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        padding: 0.6rem 1rem;
+        // background-color: $color-blue-500;
+        color: $color-blue-800;
+        font-weight: bold;
+        overflow: hidden;
+        z-index: 2;
+        font-size: 1.2em;
+        transition: color 0.3s;
+
+        & > svg {
+          font-size: 1.2em;
+        }
+        border-radius: 8px;
+        &::before {
+          content: "";
+          background-color: $color-blue-400;
+          position: absolute;
+          height: 100%;
+          top: 0;
+          left: 0;
+          width: 100%;
+          transition: transform 0.3s;
+          transform: scale(0, 1);
+          z-index: -1;
+        }
+        &:hover {
+          color: white;
+          &::before {
+            transform: scale(1, 1);
+          }
+        }
+      }
+    }
+  }
+  .end {
+    flex: 2;
+    height: 100%;
+    display: flex;
+
+    transform: translateY(-300%);
+    .desktop {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+
+      .mobile {
+        position: absolute;
+        width: 25%;
+        top: 0;
+        bottom: 0;
+      }
+    }
+  }
+}

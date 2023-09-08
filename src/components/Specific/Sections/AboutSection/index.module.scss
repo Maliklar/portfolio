@@ -12,11 +12,12 @@
     flex-direction: column;
     gap: 1rem;
     // background-color: $color-blue-a400;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,
+      rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
 
     color: black;
-    padding: 1.5rem;
-    border-radius: 8px;
+    padding: 2.5rem;
+    border-radius: 6px;
     grid-column: 1 / 7;
     grid-row: span 5;
 
@@ -26,9 +27,17 @@
       transform: scale(1.01);
     }
 
+    h3 {
+      color: $color-purple-500;
+      font-size: 1.5em;
+      display: flex;
+      align-items: center;
+      gap: 1ch;
+    }
+
     p {
       line-height: 2rem;
-      font-weight: thin;
+      // font-weight:
     }
   }
   .human {

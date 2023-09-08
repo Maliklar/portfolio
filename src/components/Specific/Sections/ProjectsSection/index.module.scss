@@ -3,10 +3,14 @@
 .container {
   position: relative;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   gap: 1rem;
-  .projectContainer {
+}
+
+/* 
+
+ .projectContainer {
     max-height: 500px;
     height: 500px;
     max-width: 340px;
@@ -94,4 +98,4 @@
       }
     }
   }
-}
+*/

@@ -1,133 +1,112 @@
-import IPAddressTracker from "@/assets/images/projects/ip-address-tracker.png";
-import SpaceTourism from "@/assets/images/projects/space-tourism-website.png";
-import CountriesApi from "@/assets/images/projects/countries-api.png";
-import LoopStudios from "@/assets/images/projects/Frontend-Mentor-Loopstudios-landing-page.png";
-import TimeTracker from "@/assets/images/projects/time-tracking-dashboard-main.png";
-import RoomPage from "@/assets/images/projects/Frontend-Mentor-Room-homepage.png";
-import SpaceX from "@/assets/images/projects/SpaceX.png";
-import Eatly from "@/assets/images/projects/eatly.png";
-const skills = {
-  JavaScript: {
-    title: "JavaScript",
-    color: "yellow",
-  },
-  HTML: {
-    title: "HTML",
-    color: "orange",
-  },
-  CSS: {
-    title: "CSS",
-    color: "#add8e6",
-  },
-  TypeScript: {
-    title: "TypeScript",
-    color: "#ADD8E6",
-  },
-  VueJs: {
-    title: "VueJs",
-    color: "lightgreen",
-  },
-  PWA: {
-    title: "PWA",
-    color: "pink",
-  },
-  NextJs: {
-    title: "NextJs",
-    color: "color-amber-500",
-  },
-};
+import { skills, SkillType } from "./skills";
+import IpAddressMain from "@/assets/images/projects2/IPTracker/main.png";
+import IpAddressMobile from "@/assets/images/projects2/IPTracker/mobile.png";
 
-export type SkillType = {
-  title: string;
-  color: string;
-};
+import LoopStudiosMain from "@/assets/images/projects2/LoopStudios/desktop.png";
+import LoopStudiosMobile from "@/assets/images/projects2/LoopStudios/mobile.png";
+
+import SpaceTourismMain from "@/assets/images/projects2/SpaceTourism/desktop.png";
+import SpaceTourismMobile from "@/assets/images/projects2/SpaceTourism/mobile.png";
+
+import EatlyMain from "@/assets/images/projects2/Eatly/desktop.png";
+import EatlyMobile from "@/assets/images/projects2/Eatly/mobile.png";
+
+import SpaceXMain from "@/assets/images/projects2/spacex/desktop.png";
+import SpaceXMobile from "@/assets/images/projects2/spacex/mobile.png";
+
+import CountriesMain from "@/assets/images/projects2/flags/desktop.png";
+import CountriesMobile from "@/assets/images/projects2/flags/mobile.png";
+
+export enum ProjectTypeEnum {
+  Web,
+  Mobile,
+}
 
 export type ProjectType = {
   title: string;
-  src: string;
   description: string;
   skills: SkillType[];
+  desktop: string;
+  mobile: string;
   gitHub: string;
   url: string;
-  state?: "active" | "top" | "bottom" | "inactive";
+  store?: string;
+  projectType: ProjectTypeEnum;
+  state?: "active" | "inactive" | "top" | "bottom";
 };
 
-const project = {
-  title: "S",
-  description: "",
-  skills: [],
-  image: "",
-  images: ["", ""],
-  gitHub: "",
-  url: "",
-  store: "",
+const IpTracker: ProjectType = {
+  title: "IP Address Tracker",
+  projectType: ProjectTypeEnum.Web,
+  description: `A part of a frontend mentor UI challenge. \n The website uses external API to make a lookup for the geolocation of a specific IP address and display it on a map.`,
+  skills: [skills.JavaScript, skills.CSS, skills.HTML],
+  desktop: IpAddressMain.src,
+  mobile: IpAddressMobile.src,
+  gitHub: "https://github.com/Maliklar/ip-address-tracker-master",
+  url: "https://maliklar.github.io/ip-address-tracker-master/",
 };
-const projects: ProjectType[] = [
-  {
-    title: "IP Address Tracker",
-    src: IPAddressTracker.src,
-    description: "Get the current location based on the IP address.",
-    skills: [skills.CSS, skills.JavaScript, skills.HTML],
-    url: "https://maliklar.github.io/rest-countries-api-with-color-theme-switcher-master/",
-    gitHub: "",
-  },
-  {
-    title: "Space Tourism",
-    src: SpaceTourism.src,
-    description: "A concept website allows people to book a flight to space.",
-    skills: [skills.VueJs, skills.PWA],
-    url: "https://maliklar.github.io/rest-countries-api-with-color-theme-switcher-master/",
-    gitHub: "",
-  },
-  {
-    title: "Countries Borders",
-    src: CountriesApi.src,
-    description:
-      "A website that allow users to search for their country and check bordered countries",
-    skills: [skills.VueJs, skills.PWA],
-    url: "https://maliklar.github.io/rest-countries-api-with-color-theme-switcher-master/",
-    gitHub: "",
-  },
-  {
-    title: "LoopStudios",
-    src: LoopStudios.src,
-    description: "LoopStudios Landing page",
-    skills: [skills.JavaScript, skills.HTML, skills.CSS],
-    url: "https://maliklar.github.io/loopstudios-landing-page-main/",
-    gitHub: "",
-  },
-  {
-    title: "Time Tracker",
-    src: TimeTracker.src,
-    description: "Single page that allows users to track daily events",
-    skills: [skills.JavaScript, skills.HTML, skills.CSS],
-    url: "https://maliklar.github.io/time-tracking-dashboard-main/",
-    gitHub: "",
-  },
-  {
-    title: "Furniture Page",
-    src: RoomPage.src,
-    description: "Single page shows furniture",
-    skills: [skills.JavaScript, skills.HTML, skills.CSS],
-    url: "https://maliklar.github.io/room-homepage-master/",
-    gitHub: "https://maliklar.github.io/room-homepage-master/",
-  },
-  {
-    title: "SpaceX Landing Clone",
-    src: SpaceX.src,
-    description: "Clone of SpaceX website",
-    skills: [skills.JavaScript, skills.HTML, skills.CSS],
-    url: "https://maliklar.github.io/room-homepage-master/",
-    gitHub: "https://maliklar.github.io/room-homepage-master/",
-  },
-  {
-    title: "Eatly Landing Page",
-    src: Eatly.src,
-    description: "Landing page for Eatly",
-    skills: [skills.NextJs, skills.TypeScript],
-    url: "https://mae-ndo8ivo95-maliklar.vercel.app/",
-    gitHub: "https://maliklar.github.io/room-homepage-master/",
-  },
+
+const LoopStudios: ProjectType = {
+  title: "Loop Studios",
+  projectType: ProjectTypeEnum.Web,
+  description: `A part of a frontend mentor UI challenge. \n A concept landing page for a company called Loop Studios with a beautiful and responsive user interface`,
+  skills: [skills.JavaScript, skills.CSS, skills.HTML],
+  desktop: LoopStudiosMain.src,
+  mobile: LoopStudiosMobile.src,
+  gitHub: "https://github.com/Maliklar/loopstudios-landing-page-main",
+  url: "https://maliklar.github.io/loopstudios-landing-page-main/",
+};
+
+const SpaceTourism: ProjectType = {
+  title: "Space Tourism",
+  projectType: ProjectTypeEnum.Web,
+  description: `A part of a frontend mentor UI challenge. \n A concept of a futuristic website that allow people to book a flight into space`,
+  skills: [skills.JavaScript, skills.CSS, skills.VueJs],
+  desktop: SpaceTourismMain.src,
+  mobile: SpaceTourismMobile.src,
+  gitHub: "https://github.com/Maliklar/space-tourism-website",
+  url: "https://maliklar.github.io/space-tourism-website/",
+};
+
+const Eatly: ProjectType = {
+  title: "Eatly",
+  projectType: ProjectTypeEnum.Web,
+  description: `A concept website for a resturant`,
+  skills: [skills.NextJs, skills.TypeScript, skills.SQL],
+  desktop: EatlyMain.src,
+  mobile: EatlyMobile.src,
+  gitHub: "https://github.com/Maliklar/space-tourism-website",
+  url: "https://mae-ndo8ivo95-maliklar.vercel.app/",
+};
+
+const SpaceXClone: ProjectType = {
+  title: "SpaceX Clone",
+  projectType: ProjectTypeEnum.Web,
+  description: `An clone of SpaceX website`,
+  skills: [skills.JavaScript, skills.TypeScript, skills.CSS],
+  desktop: SpaceXMain.src,
+  mobile: SpaceXMobile.src,
+  gitHub: "https://github.com/Maliklar/space-tourism-website",
+  url: "https://mae-ndo8ivo95-maliklar.vercel.app/",
+};
+
+const CountryBorders: ProjectType = {
+  title: "Bordering Country",
+  projectType: ProjectTypeEnum.Web,
+  description: `A part of a frontend mentor UI challenge. \n A website where users can lookup for a country to see some information about it in addition to its bordering countries`,
+  skills: [skills.VueJs, skills.JavaScript, skills.CSS],
+  desktop: CountriesMain.src,
+  mobile: CountriesMobile.src,
+  gitHub: "https://github.com/Maliklar/space-tourism-website",
+  url: "https://mae-ndo8ivo95-maliklar.vercel.app/",
+};
+
+const Projects = [
+  SpaceXClone,
+  Eatly,
+  LoopStudios,
+  SpaceTourism,
+  CountryBorders,
+  IpTracker,
 ];
-
-export default projects;
+export default Projects;

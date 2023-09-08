@@ -1,46 +1,44 @@
 @import "@/styles/variables.scss";
 
 .container {
+  position: relative;
   list-style: none;
   display: flex;
   align-items: center;
-  padding: 0.3rem;
 
-  // background-color: $color-amber-500;
-  // color: $color-amber-500;
-  border-radius: 8px;
-
+  // padding: 0.5rem;
+  padding-inline-end: 1em;
+  gap: 0.5em;
+  height: min-content;
+  border-radius: 100px;
   transition: all 0.3s;
-
   overflow: hidden;
+  background-color: $color-bluegray-900;
 
   .circleContainer {
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    border-radius: 8px;
-    min-height: 4rem;
-    min-width: 4rem;
+    min-height: 2.5rem;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+
+    aspect-ratio: 1 / 1;
     border-radius: 100%;
     background-color: $color-blue-500;
     color: white;
     z-index: 1;
-    box-shadow: 0px 0px 8px black;
   }
 
   strong {
     flex: 1;
-    font-size: 1.2rem;
+    font-size: 1em;
     font-weight: 400;
-    background-color: $color-bluegray-900;
     color: white;
-    padding: 0.7rem;
-    padding-top: 0.9rem;
-    padding-inline-start: 3.2rem;
-    padding-inline-end: 1.2rem;
-    margin-left: -2.5rem;
+
     z-index: 0;
-    border-radius: 100px;
+    border-radius: 8px;
   }
 }

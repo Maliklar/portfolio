@@ -6,7 +6,7 @@ import { AiFillGithub } from "react-icons/ai";
 import { PiArrowSquareOut } from "react-icons/pi";
 import Reveal from "@/components/Reveal";
 import React from "react";
-import { ProjectType } from "@/assets/data/projects2";
+import { ProjectType } from "@/assets/data/projects";
 type Props = { scrollPercent: number } & ProjectType &
   React.HtmlHTMLAttributes<HTMLDivElement>;
 const ProjectCard = ({

@@ -6,6 +6,7 @@ import {
   SiJavascript,
   SiPrisma,
   SiRedux,
+  SiSass,
   SiSvelte,
   SiTailwindcss,
   SiTypescript,
@@ -59,6 +60,11 @@ export const skills = {
   CSS: {
     title: "CSS",
     Icon: SiCss3,
+  },
+
+  SASS: {
+    title: "SASS",
+    Icon: SiSass,
   },
   HTML: {
     title: "HTML",

@@ -14,8 +14,9 @@ export default function Home() {
     <main className={styles.main}>
       <HeroSection />
       <AboutSection />
-      <SkillsSection />
       <ProjectsSection />
+      <SkillsSection />
+
       <div
         style={{
           minHeight: "200vh",

@@ -11,7 +11,7 @@ const SkillCircle = ({ src: Icon, title, shown }: Props) => {
   return (
     <li className={styles.container} data-shown={shown}>
       <div className={styles.circleContainer}>
-        <Icon size="3rem" />
+        <Icon size="1rem" />
       </div>
       <strong>{title}</strong>
     </li>

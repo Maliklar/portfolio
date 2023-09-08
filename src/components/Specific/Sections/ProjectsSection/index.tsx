@@ -1,7 +1,7 @@
 import ProjectCard from "@/components/Cards/ProjectCard";
 import styles from "./index.module.scss";
-import projects from "@/assets/data/projects2";
-import ProjectViewer from "@/components/Cards/ProjectViewer";
+import projects from "@/assets/data/projects";
+import ProjectViewer from "@/components/ProjectViewer";
 import Section from "..";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,6 +11,17 @@ const ProjectsSection = () => {
   return (
     <Section title="Projects">
       <div className={styles.container}>
+        {projects.map((project) => {
+          return <ProjectViewer key={project.title} {...project} />;
+        })}
+      </div>
+    </Section>
+  );
+};
+export default ProjectsSection;
+
+/**
+ *   <div className={styles.container}>
         {projects.map((p) => (
           <div key={p.title} className={styles.projectContainer}>
             <h3>{p.title}</h3>
@@ -58,7 +69,4 @@ const ProjectsSection = () => {
           </div>
         ))}
       </div>
-    </Section>
-  );
-};
-export default ProjectsSection;
+ */
