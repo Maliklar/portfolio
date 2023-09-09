@@ -31,7 +31,7 @@ const ProjectViewer = ({
 
   const y = useParallax(scrollYProgress, 100);
   const x = useParallax(scrollYProgress, 50);
-  const rotate = useParallax(scrollYProgress, 5);
+  const rotate = useParallax(scrollYProgress, 10);
 
   return (
     <section className={styles.container} data-direction={direction}>

@@ -111,14 +111,25 @@
       }
     }
   }
-}
 
-@media screen and (max-width: 640px) {
-  .container {
+  @media screen and (max-width: 640px) {
     flex-direction: column;
+    height: 100vh;
     .end {
       flex: 1;
-      margin-right: -20%;
+    }
+
+    &[data-direction="true"] {
+      flex-direction: column;
+
+      .end {
+        .desktop {
+          transform: translateX(-20%);
+          .mobile {
+            right: 0;
+          }
+        }
+      }
     }
   }
 }
