@@ -16,12 +16,6 @@ export default function Home() {
       <AboutSection />
       <ProjectsSection />
       <SkillsSection />
-
-      <div
-        style={{
-          minHeight: "200vh",
-        }}
-      />
     </main>
   );
 }
