@@ -15,7 +15,9 @@
     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,
       rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
 
-    color: black;
+    background-color: $color-blue-500;
+
+    color: white;
     padding: 2.5rem;
     border-radius: 6px;
     grid-column: 1 / 7;
@@ -28,7 +30,7 @@
     }
 
     h3 {
-      color: $color-purple-500;
+      color: $color-cyan-50;
       font-size: 1.5em;
       display: flex;
       align-items: center;

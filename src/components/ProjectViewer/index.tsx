@@ -26,9 +26,9 @@ const ProjectViewer = ({
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: sectionRef });
 
-  const y = useParallax(scrollYProgress, 300);
-  const x = useParallax(scrollYProgress, 100);
-  const rotate = useParallax(scrollYProgress, 50);
+  const y = useParallax(scrollYProgress, 100);
+  const x = useParallax(scrollYProgress, 50);
+  const rotate = useParallax(scrollYProgress, 5);
 
   return (
     <section className={styles.container}>
@@ -67,7 +67,7 @@ const ProjectViewer = ({
             fill
             style={{ objectFit: "contain" }}
           />
-          <motion.div className={styles.mobile} style={{ y: x }}>
+          <motion.div className={styles.mobile} style={{ y: x, rotate }}>
             <Image
               src={mobile}
               alt={title}

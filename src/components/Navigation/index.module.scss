@@ -10,7 +10,7 @@
   left: 0;
   right: 0;
   padding: 0.5em 1em;
-  color: color-amber-500;
+  color: white;
   z-index: 90;
   transition: all 0.5s;
   backdrop-filter: blur(3px);
@@ -26,13 +26,13 @@
     display: block;
     background-color: $color-blue-500;
     width: 100%;
-    height: 2px;
+    height: 1px;
     top: 100%;
     transition: transform 0.3s;
     transform: scale(0);
   }
   &[data-hidden="true"] {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 0, 0, 0.2);
     &::after {
       transform: scale(1);
     }
@@ -61,7 +61,7 @@
 
         a {
           text-decoration: none;
-          color: black;
+          color: white;
           overflow: hidden;
           font-weight: 600;
 
