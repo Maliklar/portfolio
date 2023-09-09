@@ -23,16 +23,16 @@ const Navigation = () => {
         <Link href="/" title="Website title"></Link>
         <ul>
           <li>
-            <Link href="#">ABOUT</Link>
+            <Link href="#About Me">ABOUT</Link>
           </li>
           <li>
-            <Link href="#">SKILLS</Link>
+            <Link href="#Skills">SKILLS</Link>
           </li>
           <li>
-            <Link href="#">PROJECTS</Link>
+            <Link href="#Projects">PROJECTS</Link>
           </li>
           <li>
-            <Link href="#">TESTIMONIES</Link>
+            <Link href="#Testimonies">TESTIMONIES</Link>
           </li>
         </ul>
       </nav>

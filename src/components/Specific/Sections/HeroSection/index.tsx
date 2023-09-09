@@ -6,7 +6,12 @@ import { FaChevronRight, FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiFrontendmentor, SiHackerrank, SiLeetcode } from "react-icons/si";
 import styles from "./index.module.scss";
 const HeroSection = () => {
-  const continueClickHandler = () => {};
+  const continueClickHandler = () => {
+    scrollTo({
+      top: innerHeight,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <header className={styles.container}>
@@ -36,7 +41,7 @@ const HeroSection = () => {
         </div>
       </div>
       <button className={styles.button} onClick={continueClickHandler}>
-        CHECKOUT MY WORK <FaChevronRight />{" "}
+        Continue <FaChevronRight />{" "}
       </button>
       <div className={styles.footer}>
         <div className={styles.line} />
