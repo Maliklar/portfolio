@@ -4,6 +4,8 @@
   gap: 2rem;
   height: 60vh;
 
+  border-bottom: 1px solid $color-blue-800;
+
   .start {
     flex: 1;
     align-self: center;
@@ -76,6 +78,7 @@
     flex: 2;
     height: 100%;
     display: flex;
+    z-index: 3;
 
     transform: translateY(-300%);
     .desktop {
@@ -91,6 +94,16 @@
         top: 0;
         bottom: 0;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    flex-direction: column;
+    .end {
+      flex: 1;
+      margin-right: -20%;
     }
   }
 }
