@@ -7,6 +7,11 @@
   &[data-direction="true"] {
     flex-direction: row-reverse;
 
+    .start {
+      .links {
+        justify-content: flex-start;
+      }
+    }
     .end {
       .desktop {
         transform: translateX(-20%);
@@ -52,7 +57,7 @@
         text-decoration: none;
         padding: 0.6rem 1rem;
         // background-color: $color-blue-500;
-        color: $color-blue-800;
+        color: $color-blue-500;
         font-weight: bold;
         overflow: hidden;
         z-index: 2;
