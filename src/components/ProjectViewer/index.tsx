@@ -12,7 +12,9 @@ function useParallax(value: MotionValue<number>, distance: number) {
   return useTransform(value, [0, 1], [-distance, distance]);
 }
 
-type Props = ProjectType;
+type Props = ProjectType & {
+  direction: boolean;
+};
 const ProjectViewer = ({
   title,
   description,
@@ -21,8 +23,9 @@ const ProjectViewer = ({
   desktop,
   mobile,
   skills,
+  direction,
   projectType,
-}: ProjectType) => {
+}: Props) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: sectionRef });
 
@@ -31,7 +34,7 @@ const ProjectViewer = ({
   const rotate = useParallax(scrollYProgress, 5);
 
   return (
-    <section className={styles.container}>
+    <section className={styles.container} data-direction={direction}>
       <div className={styles.start} ref={sectionRef}>
         <h3>{title}</h3>
         <p>{description}</p>

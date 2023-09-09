@@ -11,8 +11,14 @@ const ProjectsSection = () => {
   return (
     <Section title="Projects">
       <div className={styles.container}>
-        {projects.map((project) => {
-          return <ProjectViewer key={project.title} {...project} />;
+        {projects.map((project, index) => {
+          return (
+            <ProjectViewer
+              direction={index % 2 === 0}
+              key={project.title}
+              {...project}
+            />
+          );
         })}
       </div>
     </Section>
